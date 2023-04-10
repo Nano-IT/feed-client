@@ -1,0 +1,55 @@
+<div class="flex w-full h-full">
+  <div class="mt-3 mx-auto max-w-lg lg:max-w-4xl w-full">
+    <div class="flex flex-wrap mx-4">
+      <div class="mx-auto text-center w-full">
+        <h1 class="text-3xl mb-2">Sign In</h1>
+        <p class="text-green-500 text-sm mb-4">
+          <a
+            [routerLink]="['/register']"
+            class="hover:underline"
+          >
+            Need an account?
+          </a>
+        </p>
+        <ac-backend-error-messages
+          *ngIf="backendErrors$ | async"
+          [backendErrors]="backendErrors$ | async"
+        ></ac-backend-error-messages>
+        <form
+          class="max-w-lg w-full mx-auto"
+          autocomplete="off"
+          [formGroup]="form"
+          (ngSubmit)="submit()"
+        >
+          <fieldset>
+            <fieldset class="mb-4">
+              <input
+                class="py-3 px-6 w-full leading-6 focus:outline-blue-300 text-gray-600 border border-gray-00 rounded-md"
+                type="email"
+                placeholder="Email"
+                autocomplete="off"
+                formControlName="email"
+              />
+            </fieldset>
+            <fieldset class="mb-4">
+              <input
+                autocomplete="new-password"
+                class="py-3 px-6 w-full leading-6 focus:outline-blue-300 text-gray-600 border border-gray-00 rounded-md"
+                type="password"
+                placeholder="Password"
+                formControlName="password"
+              />
+            </fieldset>
+            <button
+              class="bg-green-400 p-3 text-white py-3 px-6 rounded-md hover:bg-green-500 disabled:bg-green-200"
+              type="submit"
+              [disabled]="isSubmitting$ | async"
+            >
+              Sign in
+            </button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
