@@ -10,10 +10,10 @@ import { reducers } from './store/reducers';
 import { AuthService } from './services/auth.service';
 import { EffectsModule } from '@ngrx/effects';
 import { RegisterEffect } from './store/effects/register.effect';
-import { BackendErrorMessagesModule } from '../shared/modules/backend-error-messages/backend-error-messages.module';
 import { PersistenceService } from '../shared/services/persistence.service';
 import { LoginEffect } from './store/effects/login.effect';
 import { GetCurrentUserEffect } from './store/effects/getCurrentUser.effect';
+import { BackendErrorMessagesComponent } from '../shared/components/backend-error-messages/backend-error-messages.component';
 
 const routes: Routes = [
   {
@@ -38,7 +38,7 @@ const routes: Routes = [
       LoginEffect,
       GetCurrentUserEffect,
     ]),
-    BackendErrorMessagesModule,
+    BackendErrorMessagesComponent,
   ],
   exports: [LoginComponent, RegisterComponent],
   providers: [AuthService, PersistenceService],

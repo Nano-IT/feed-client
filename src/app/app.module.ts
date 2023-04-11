@@ -8,11 +8,11 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
-import { TopBarModule } from './shared/modules/top-bar/top-bar.module';
 import { AuthInterceptor } from './shared/services/auth.interceptor';
 import { PersistenceService } from './shared/services/persistence.service';
 import { GlobalFeedModule } from './global-feed/global-feed.module';
 import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
+import { TopBarComponent } from './shared/components/top-bar/top-bar.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,9 +30,9 @@ import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
       trace: false,
       traceLimit: 75,
     }),
-    TopBarModule,
     GlobalFeedModule,
     StoreRouterConnectingModule.forRoot(),
+    TopBarComponent,
   ],
   providers: [
     PersistenceService,

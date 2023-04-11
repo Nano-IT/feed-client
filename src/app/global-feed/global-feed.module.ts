@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { GlobalFeedComponent } from './components/global-feed/global-feed.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FeedModule } from '../shared/modules/feed/feed.module';
-import { BannerComponent } from '../shared/modules/banner/banner.component';
+import { BannerComponent } from '../shared/components/banner/banner.component';
 
 const routes: Routes = [
   {

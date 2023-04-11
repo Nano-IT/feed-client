@@ -7,9 +7,9 @@ import { GetFeedEffect } from './store/effects/getFeed.effect';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store/reducers';
 import { RouterLink } from '@angular/router';
-import { ErrorMessageComponent } from '../error-message/error-message.component';
-import { LoadingComponent } from '../loading/loading.component';
-import { PaginationComponent } from '../pagination/pagination.component';
+import { ErrorMessageComponent } from '../../components/error-message/error-message.component';
+import { LoadingComponent } from '../../components/loading/loading.component';
+import { PaginationComponent } from '../../components/pagination/pagination.component';
 
 @NgModule({
   declarations: [FeedComponent],
