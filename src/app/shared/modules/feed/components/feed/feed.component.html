@@ -1,0 +1,58 @@
+<ac-loading *ngIf="isLoading$ | async"></ac-loading>
+<ac-error-message *ngIf="error$ | async"></ac-error-message>
+
+<div *ngIf="feed$ | async">
+  <div
+    *ngFor="let article of (feed$ | async).articles"
+    class="py-5 border-t border-t-gray-200"
+  >
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <div
+          [routerLink]="['/profiles', article.author.username]"
+          class="w-10 h-10 rounded-full bg-gray-500"
+        ></div>
+        <div class="flex flex-col ml-2">
+          <a
+            [routerLink]="['/profiles', article.author.username]"
+            class="text-green-600"
+          >
+            {{ article.author.username }}
+          </a>
+          <span class="text-sm text-gray-400">{{
+            article.createdAt | date
+          }}</span>
+        </div>
+      </div>
+      <div>
+        add to favorite <span>{{ article.favoritesCount }}</span>
+      </div>
+    </div>
+    <h3
+      class="font-bold text-2xl leading-6 mt-2"
+      [routerLink]="['/articles', article.slug]"
+    >
+      {{ article.title }}
+    </h3>
+    <p class="text-gray-400">
+      {{ article.description }}
+    </p>
+    <div class="flex items-center justify-between">
+      <button>Read more</button>
+      <div class="flex">
+        <div
+          class="ml-1 p-1 text-sm rounded-lg text-gray-500 border border-gray-500"
+          *ngFor="let tag of article.tagList"
+        >
+          {{ tag }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <ac-pagination
+    [total]="(feed$ | async).articlesCount"
+    [limit]="limit"
+    [currentPage]="currentPage"
+    [url]="baseUrl"
+  ></ac-pagination>
+</div>

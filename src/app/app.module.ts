@@ -10,7 +10,9 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
 import { TopBarModule } from './shared/modules/top-bar/top-bar.module';
 import { AuthInterceptor } from './shared/services/auth.interceptor';
-import {PersistenceService} from "./shared/services/persistence.service";
+import { PersistenceService } from './shared/services/persistence.service';
+import { GlobalFeedModule } from './global-feed/global-feed.module';
+import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +21,7 @@ import {PersistenceService} from "./shared/services/persistence.service";
     AppRoutingModule,
     HttpClientModule,
     AuthModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({ router: routerReducer }),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
@@ -29,6 +31,8 @@ import {PersistenceService} from "./shared/services/persistence.service";
       traceLimit: 75,
     }),
     TopBarModule,
+    GlobalFeedModule,
+    StoreRouterConnectingModule.forRoot(),
   ],
   providers: [
     PersistenceService,

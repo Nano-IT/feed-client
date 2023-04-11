@@ -1401,6 +1401,13 @@
   dependencies:
     tslib "^2.0.0"
 
+"@ngrx/router-store@^15.4.0":
+  version "15.4.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/router-store/-/router-store-15.4.0.tgz#7ab92ac545bdde7e70dd992d4bb96a22fe6f9d2e"
+  integrity sha512-uc8gx+SMr2gyly+WSBmGnpHTPsMVhenUG6skH3Qk67hrwdVG3SABjw3qdP4GibbfwwajMQ67sLaLY8PQZ5Sb2g==
+  dependencies:
+    tslib "^2.0.0"
+
 "@ngrx/store-devtools@^15.4.0":
   version "15.4.0"
   resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-15.4.0.tgz#39c1a31f813dc4328ed0fb826843845c83422c2d"
