@@ -39,14 +39,7 @@
     </p>
     <div class="flex items-center justify-between">
       <button>Read more</button>
-      <div class="flex">
-        <div
-          class="ml-1 p-1 text-sm rounded-lg text-gray-500 border border-gray-500"
-          *ngFor="let tag of article.tagList"
-        >
-          {{ tag }}
-        </div>
-      </div>
+      <ac-tag-list [tags]="article.tagList"></ac-tag-list>
     </div>
   </div>
   <ac-pagination

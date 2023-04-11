@@ -13,6 +13,7 @@ import { PersistenceService } from './shared/services/persistence.service';
 import { GlobalFeedModule } from './global-feed/global-feed.module';
 import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { TopBarComponent } from './shared/components/top-bar/top-bar.component';
+import { PopularTagsModule } from '@/app/shared/modules/popular-tags/popular-tags.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,6 +34,7 @@ import { TopBarComponent } from './shared/components/top-bar/top-bar.component';
     GlobalFeedModule,
     StoreRouterConnectingModule.forRoot(),
     TopBarComponent,
+    PopularTagsModule,
   ],
   providers: [
     PersistenceService,

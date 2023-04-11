@@ -1,10 +1,12 @@
 <ac-banner></ac-banner>
 <div class="w-full p-5 mt-5">
-  <div class="max-w-3xl flex justify-between mx-auto">
-    <div>
+  <div class="max-w-7xl mx-auto grid grid-cols-12 gap-4">
+    <div class="col-span-9">
       <div class="py-2">Global feed</div>
       <ac-feed [apiUrl]="apiUrl"></ac-feed>
     </div>
-    <div>POPULAR TAGS</div>
+    <div class="col-span-3">
+      <ac-popular-tags></ac-popular-tags>
+    </div>
   </div>
 </div>

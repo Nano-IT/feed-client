@@ -1,0 +1,6 @@
+<div class="p-2 bg-gray-100">
+  <h1 class="font-bold">Popular tags</h1>
+  <ac-loading *ngIf="isLoading$ | async"></ac-loading>
+  <ac-error-message *ngIf="error$ | async"></ac-error-message>
+  <ac-tag-list [tags]="popularTags$ | async"></ac-tag-list>
+</div>

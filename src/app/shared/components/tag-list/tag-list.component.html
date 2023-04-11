@@ -1,0 +1,9 @@
+<ul class="flex flex-wrap">
+  <li
+    class="m-1 p-1 text-sm rounded-lg text-gray-500 border border-gray-500 cursor-pointer hover:bg-gray-200"
+    *ngFor="let tag of tags"
+    [routerLink]="['/tags', tag]"
+  >
+    {{ tag }}
+  </li>
+</ul>
