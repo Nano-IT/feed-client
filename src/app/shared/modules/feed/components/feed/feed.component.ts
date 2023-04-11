@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { getFeedAction } from '../../store/actions/getFeed.action';
 import { Observable, Subscription } from 'rxjs';
@@ -10,13 +10,14 @@ import {
 } from '../../store/selectors';
 import { environment } from 'src/environments/environment.development';
 import { ActivatedRoute, Router } from '@angular/router';
+import {parse, stringify} from 'qs'
 
 @Component({
   selector: 'ac-feed',
   templateUrl: './feed.component.html',
   styleUrls: ['./feed.component.css'],
 })
-export class FeedComponent implements OnInit, OnDestroy {
+export class FeedComponent implements OnInit, OnDestroy, OnChanges {
   @Input() apiUrl: string;
 
   isLoading$: Observable<boolean>;
@@ -43,6 +44,14 @@ export class FeedComponent implements OnInit, OnDestroy {
     this.queryParamsSubscription.unsubscribe();
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    const isApiUrlChanged = !changes['apiUrl'].firstChange && changes['apiUrl'].currentValue !== changes['apiUrl'].previousValue
+
+    if (isApiUrlChanged) {
+      this.fetchFeed();
+    }
+  }
+
   initializeValues(): void {
     this.isLoading$ = this.store.pipe(select(isLoadingSelector));
     this.error$ = this.store.pipe(select(errorSelector));
@@ -61,7 +70,13 @@ export class FeedComponent implements OnInit, OnDestroy {
 
   fetchFeed(): void {
     const offset = this.currentPage  * this.limit - this.limit;
-    const params = { offset, limit: this.limit };
-    this.store.dispatch(getFeedAction({ url: this.apiUrl, params }));
+    const [url, query] = this.apiUrl.split('?')
+    const parsedUrl = parse(query);
+    const stringifyParams = stringify({
+      limit: this.limit,
+      offset,
+      ...parsedUrl
+    })
+    this.store.dispatch(getFeedAction({ url: `${url}?${stringifyParams}` }));
   }
 }

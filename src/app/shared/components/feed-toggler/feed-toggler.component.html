@@ -1,0 +1,29 @@
+<div>
+  <ul class="flex">
+    <li
+      [routerLink]="['/feed']"
+      *ngIf="isLoggedIn$"
+      routerLinkActive="text-green-500 border-b-2 border-b-green-500"
+      class="p-2 mx-1 cursor-pointer"
+    >
+      Your feed
+    </li>
+    <li
+      [routerLink]="['/']"
+      class="p-2 mx-1 cursor-pointer"
+      routerLinkActive="text-green-500 border-b-2 border-b-green-500"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Global feed
+    </li>
+
+    <li
+      [routerLink]="['/tags', tagName]"
+      *ngIf="tagName"
+      routerLinkActive="text-green-500 border-b-2 border-b-green-500"
+      class="p-2 mx-1 cursor-pointer"
+    >
+      {{ tagName }}
+    </li>
+  </ul>
+</div>

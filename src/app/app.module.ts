@@ -14,6 +14,8 @@ import { GlobalFeedModule } from './global-feed/global-feed.module';
 import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { TopBarComponent } from './shared/components/top-bar/top-bar.component';
 import { PopularTagsModule } from '@/app/shared/modules/popular-tags/popular-tags.module';
+import { YourFeedModule } from '@/app/your-feed/your-feed.module';
+import {TagFeedModule} from "@/app/tag-feed/tag-feed.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,6 +37,8 @@ import { PopularTagsModule } from '@/app/shared/modules/popular-tags/popular-tag
     StoreRouterConnectingModule.forRoot(),
     TopBarComponent,
     PopularTagsModule,
+    YourFeedModule,
+    TagFeedModule
   ],
   providers: [
     PersistenceService,
