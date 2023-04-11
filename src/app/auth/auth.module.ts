@@ -13,7 +13,7 @@ import { RegisterEffect } from './store/effects/register.effect';
 import { PersistenceService } from '../shared/services/persistence.service';
 import { LoginEffect } from './store/effects/login.effect';
 import { GetCurrentUserEffect } from './store/effects/getCurrentUser.effect';
-import { BackendErrorMessagesComponent } from '../shared/components/backend-error-messages/backend-error-messages.component';
+import { BackendErrorMessagesComponent } from '@/app/shared/components/backend-error-messages/backend-error-messages.component';
 
 const routes: Routes = [
   {
