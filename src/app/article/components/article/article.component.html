@@ -1,20 +1,20 @@
 <ac-loading *ngIf="isLoading$ | async"></ac-loading>
 <ac-error-message *ngIf="error$ | async"></ac-error-message>
 
-<div *ngIf="isAuthor$ | async">Article author</div>
-
 <section *ngIf="article">
   <div class="bg-neutral-800 p-10">
     <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl font-bold text-white">
+      <h1 class="text-4xl font-bold text-white break-all">
         {{ article.title }}
       </h1>
       <div class="flex items-center mt-5">
         <div>
           <img
             [routerLink]="['/profiles', article.author.username]"
-            [src]="article.author.image"
+            [ngSrc]="article.author.image"
             alt=""
+            width="32"
+            height="32"
             class="rounded-full"
           />
         </div>
@@ -39,7 +39,7 @@
     </div>
   </div>
   <div class="max-w-4xl mx-auto mt-5">
-    <p class="text-gray-500">
+    <p class="text-gray-500 break-all">
       {{ article.body }}
     </p>
     <div class="mt-8">

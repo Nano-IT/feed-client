@@ -14,6 +14,7 @@ import {
   getCurrentUserAction,
   getCurrentUserSuccessAction,
 } from './actions/getCurrentUser.action';
+import { routerNavigationAction } from '@ngrx/router-store';
 
 const initialState: AuthStateInterface = {
   isSubmitting: false,
@@ -31,7 +32,7 @@ const authReducer = createReducer(
       ...state,
       isSubmitting: true,
       validationErrors: null,
-    })
+    }),
   ),
   on(
     registerSuccessAction,
@@ -40,7 +41,7 @@ const authReducer = createReducer(
       isSubmitting: false,
       isLoggedIn: true,
       currentUser: action.currentUser,
-    })
+    }),
   ),
   on(
     registerFailureAction,
@@ -48,7 +49,7 @@ const authReducer = createReducer(
       ...state,
       isSubmitting: false,
       validationErrors: action.errors,
-    })
+    }),
   ),
   on(
     loginAction,
@@ -56,7 +57,7 @@ const authReducer = createReducer(
       ...state,
       isSubmitting: true,
       validationErrors: null,
-    })
+    }),
   ),
   on(
     loginSuccessAction,
@@ -65,7 +66,7 @@ const authReducer = createReducer(
       isSubmitting: false,
       isLoggedIn: true,
       currentUser: action.currentUser,
-    })
+    }),
   ),
   on(
     loginFailureAction,
@@ -73,14 +74,14 @@ const authReducer = createReducer(
       ...state,
       isSubmitting: false,
       validationErrors: action.errors,
-    })
+    }),
   ),
   on(
     getCurrentUserAction,
     (state): AuthStateInterface => ({
       ...state,
       isLoading: true,
-    })
+    }),
   ),
   on(
     getCurrentUserSuccessAction,
@@ -89,8 +90,9 @@ const authReducer = createReducer(
       isLoading: false,
       isLoggedIn: true,
       currentUser: action.currentUser,
-    })
-  )
+    }),
+  ),
+  on(routerNavigationAction, (): AuthStateInterface => initialState),
 );
 
 export function reducers(state: AuthStateInterface, action: Action) {

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { ArticleComponent } from '@/app/article/components/article/article.component';
 import { ArticleService as SharedArticleService } from '@/app/shared/services/article.service';
 import { StoreModule } from '@ngrx/store';
@@ -30,6 +30,7 @@ const routes: Routes = [
     LoadingComponent,
     ErrorMessageComponent,
     TagListComponent,
+    NgOptimizedImage,
   ],
   providers: [SharedArticleService, ArticleService],
 })
