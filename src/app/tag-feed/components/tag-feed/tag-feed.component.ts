@@ -1,23 +1,20 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'ac-tag-feed',
   templateUrl: './tag-feed.component.html',
-  styleUrls: ['./tag-feed.component.css']
+  styleUrls: ['./tag-feed.component.css'],
 })
-export class TagFeedComponent implements OnInit{
-  apiUrl
-  tagName ;
+export class TagFeedComponent implements OnInit {
+  apiUrl = '/articles';
+  tagName;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute) {}
 
-  }
-
-  ngOnInit() : void {
+  ngOnInit(): void {
     this.route.params.subscribe((params: any) => {
-      this.tagName = params.slug
-      this.apiUrl = `/articles?tag=${this.tagName}`
-    })
+      this.tagName = params.slug;
+    });
   }
 }

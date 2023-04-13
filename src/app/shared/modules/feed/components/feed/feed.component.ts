@@ -25,6 +25,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FeedComponent implements OnInit, OnDestroy, OnChanges {
   @Input() apiUrl: string;
+  @Input() tagName: string;
 
   isLoading$: Observable<boolean>;
   error$: Observable<string | null>;
@@ -79,10 +80,14 @@ export class FeedComponent implements OnInit, OnDestroy, OnChanges {
   fetchFeed(): void {
     const offset = this.currentPage * this.limit - this.limit;
 
-    const params = {
+    const params: any = {
       limit: this.limit,
       offset,
     };
+
+    if (this.tagName) {
+      params.tag = this.tagName;
+    }
 
     this.store.dispatch(getFeedAction({ url: this.apiUrl, params }));
   }
