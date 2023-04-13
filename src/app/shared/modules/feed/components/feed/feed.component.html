@@ -10,8 +10,16 @@
       <div class="flex items-center">
         <div
           [routerLink]="['/profiles', article.author.username]"
-          class="w-10 h-10 rounded-full bg-gray-500"
-        ></div>
+          class="w-10 h-10"
+        >
+          <img
+            class="rounded-full"
+            [ngSrc]="article.author.image"
+            alt=""
+            width="32"
+            height="32"
+          />
+        </div>
         <div class="flex flex-col ml-2">
           <a
             [routerLink]="['/profiles', article.author.username]"
@@ -48,7 +56,10 @@
     [currentPage]="currentPage"
     [url]="baseUrl"
   ></ac-pagination>
-  <div *ngIf="!(feed$ | async).articlesCount && !(isLoading$ | async) " class="p-4 text-gray-400">
+  <div
+    *ngIf="!(feed$ | async).articlesCount && !(isLoading$ | async)"
+    class="p-4 text-gray-400"
+  >
     There are no feeds.
   </div>
 </div>

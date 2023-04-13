@@ -1,0 +1,55 @@
+<div class="w-full">
+  <div class="max-w-4xl mx-auto mt-5">
+    <ac-backend-error-messages
+      *ngIf="errors"
+      [backendErrors]="errors"
+    ></ac-backend-error-messages>
+    <ac-loading *ngIf="isSubmitting"></ac-loading>
+    <form
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+    >
+      <fieldset>
+        <fieldset class="mt-2">
+          <input
+            type="text"
+            class="py-3 px-6 w-full leading-6 focus:outline-blue-300 text-gray-600 border border-gray-00 rounded-md"
+            formControlName="title"
+            placeholder="Article title"
+          />
+        </fieldset>
+        <fieldset class="mt-2">
+          <input
+            class="py-2 px-3 w-full leading-5 text-sm focus:outline-blue-300 text-gray-600 border border-gray-00 rounded-md"
+            type="text"
+            formControlName="description"
+            placeholder="Article description"
+          />
+        </fieldset>
+        <fieldset class="mt-2">
+          <textarea
+            type="text"
+            class="py-2 px-3 w-full leading-5 text-sm focus:outline-blue-300 text-gray-600 border border-gray-00 rounded-md"
+            formControlName="body"
+            rows="8"
+            placeholder="Article body"
+          ></textarea>
+        </fieldset>
+        <fieldset class="mt-2">
+          <input
+            type="text"
+            class="py-2 px-3 w-full leading-5 text-sm focus:outline-blue-300 text-gray-600 border border-gray-00 rounded-md"
+            formControlName="tagList"
+            placeholder="Enter Tags"
+          />
+        </fieldset>
+      </fieldset>
+      <button
+        class="mt-5 w-full bg-green-600 p-3 rounded-md hover:bg-green-700 text-white drop-shadow-md"
+        [disabled]="form.invalid || isSubmitting"
+      >
+        Publish article
+      </button>
+    </form>
+  </div>
+</div>

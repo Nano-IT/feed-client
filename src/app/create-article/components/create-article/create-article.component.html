@@ -1,0 +1,6 @@
+<ac-article-form
+  [initialValues]="initialValues"
+  (articleSubmit)="onSubmit($event)"
+  [isSubmitting]="isSubmitting$ | async"
+  [errors]="backendErrors$ | async"
+></ac-article-form>

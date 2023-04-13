@@ -15,7 +15,10 @@ import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { TopBarComponent } from './shared/components/top-bar/top-bar.component';
 import { PopularTagsModule } from '@/app/shared/modules/popular-tags/popular-tags.module';
 import { YourFeedModule } from '@/app/your-feed/your-feed.module';
-import {TagFeedModule} from "@/app/tag-feed/tag-feed.module";
+import { TagFeedModule } from '@/app/tag-feed/tag-feed.module';
+import { ArticleModule } from '@/app/article/article.module';
+import { CreateArticleModule } from '@/app/create-article/create-article.module';
+import { EditArticleModule } from '@/app/edit-article/edit-article.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -38,7 +41,10 @@ import {TagFeedModule} from "@/app/tag-feed/tag-feed.module";
     TopBarComponent,
     PopularTagsModule,
     YourFeedModule,
-    TagFeedModule
+    TagFeedModule,
+    CreateArticleModule,
+    ArticleModule,
+    EditArticleModule,
   ],
   providers: [
     PersistenceService,
