@@ -1,4 +1,11 @@
-import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { getFeedAction } from '../../store/actions/getFeed.action';
 import { Observable, Subscription } from 'rxjs';
@@ -10,7 +17,6 @@ import {
 } from '../../store/selectors';
 import { environment } from 'src/environments/environment.development';
 import { ActivatedRoute, Router } from '@angular/router';
-import {parse, stringify} from 'qs'
 
 @Component({
   selector: 'ac-feed',
@@ -32,7 +38,7 @@ export class FeedComponent implements OnInit, OnDestroy, OnChanges {
   constructor(
     private store: Store,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {}
 
   ngOnInit(): void {
@@ -45,7 +51,9 @@ export class FeedComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    const isApiUrlChanged = !changes['apiUrl'].firstChange && changes['apiUrl'].currentValue !== changes['apiUrl'].previousValue
+    const isApiUrlChanged =
+      !changes['apiUrl'].firstChange &&
+      changes['apiUrl'].currentValue !== changes['apiUrl'].previousValue;
 
     if (isApiUrlChanged) {
       this.fetchFeed();
@@ -64,19 +72,18 @@ export class FeedComponent implements OnInit, OnDestroy, OnChanges {
       (params: Record<string, any>) => {
         this.currentPage = Number(params['page'] || '1');
         this.fetchFeed();
-      }
+      },
     );
   }
 
   fetchFeed(): void {
-    const offset = this.currentPage  * this.limit - this.limit;
-    const [url, query] = this.apiUrl.split('?')
-    const parsedUrl = parse(query);
-    const stringifyParams = stringify({
+    const offset = this.currentPage * this.limit - this.limit;
+
+    const params = {
       limit: this.limit,
       offset,
-      ...parsedUrl
-    })
-    this.store.dispatch(getFeedAction({ url: `${url}?${stringifyParams}` }));
+    };
+
+    this.store.dispatch(getFeedAction({ url: this.apiUrl, params }));
   }
 }
