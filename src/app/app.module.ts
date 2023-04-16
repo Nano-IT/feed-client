@@ -19,6 +19,7 @@ import { TagFeedModule } from '@/app/tag-feed/tag-feed.module';
 import { ArticleModule } from '@/app/article/article.module';
 import { CreateArticleModule } from '@/app/create-article/create-article.module';
 import { EditArticleModule } from '@/app/edit-article/edit-article.module';
+import { SettingsModule } from '@/app/settings/settings.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -45,6 +46,7 @@ import { EditArticleModule } from '@/app/edit-article/edit-article.module';
     CreateArticleModule,
     ArticleModule,
     EditArticleModule,
+    SettingsModule,
   ],
   providers: [
     PersistenceService,

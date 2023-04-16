@@ -1,12 +1,22 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ArticleInputInterface } from '@/app/shared/types/articleInput.interface';
 import { BackendErrorsInterface } from '@/app/shared/types/backendErrors.interface';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { BackendErrorMessagesComponent } from '@/app/shared/components/backend-error-messages/backend-error-messages.component';
+import { LoadingComponent } from '@/app/shared/components/loading/loading.component';
 
 @Component({
   selector: 'ac-article-form',
   templateUrl: './article-form.component.html',
   styleUrls: ['./article-form.component.css'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    BackendErrorMessagesComponent,
+    LoadingComponent,
+    ReactiveFormsModule,
+  ],
 })
 export class ArticleFormComponent implements OnInit {
   @Input() initialValues: ArticleInputInterface;

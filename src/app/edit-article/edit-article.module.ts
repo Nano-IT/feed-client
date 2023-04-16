@@ -9,10 +9,10 @@ import { GetArticleEffect } from '@/app/edit-article/store/effects/getArticle.ef
 import { LoadingComponent } from '@/app/shared/components/loading/loading.component';
 import { BackendErrorMessagesComponent } from '@/app/shared/components/backend-error-messages/backend-error-messages.component';
 import { ErrorMessageComponent } from '@/app/shared/components/error-message/error-message.component';
-import { ArticleFormModule } from '@/app/shared/modules/article-form/article-form.module';
-import {RouterModule, Routes} from '@angular/router';
-import {StoreModule} from "@ngrx/store";
-import {reducers} from "@/app/edit-article/store/reducers";
+import { RouterModule, Routes } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from '@/app/edit-article/store/reducers';
+import { ArticleFormComponent } from '@/app/shared/components/article-form/article-form.component';
 
 const routes: Routes = [
   {
@@ -29,9 +29,9 @@ const routes: Routes = [
     LoadingComponent,
     BackendErrorMessagesComponent,
     ErrorMessageComponent,
-    ArticleFormModule,
     RouterModule.forChild(routes),
-    StoreModule.forFeature('updateArticle', reducers)
+    StoreModule.forFeature('updateArticle', reducers),
+    ArticleFormComponent,
   ],
   providers: [EditArticleService, SharedArticleService],
 })
