@@ -26,11 +26,11 @@
             {{ article.author.username }}
           </a>
           <span class="text-xs text-gray-500">
-            {{ article.createdAt }}
+            {{ article.createdAt | date}}
           </span>
         </div>
         <div
-          *ngIf="isAuthor$ | async"
+          *ngIf="isAuthor$ | async; else notAuthorAction;"
           class="ml-2"
         >
           <a
@@ -72,7 +72,7 @@
       <ac-tag-list [tags]="article.tagList"></ac-tag-list>
     </div>
   </div>
-  <div class="max-w-xl mx-auto">
+  <div class="max-w-xl mx-auto mt-5">
     <ac-article-create-comment
       [articleSlug]="article.slug"
     ></ac-article-create-comment>
