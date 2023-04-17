@@ -7,15 +7,15 @@ import {
   isAnonymousSelector,
   isLoggedInSelector,
 } from 'src/app/auth/store/selectors';
-import { CommonModule } from '@angular/common';
-import {RouterLink} from "@angular/router";
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'ac-top-bar',
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.css'],
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, NgOptimizedImage],
 })
 export class TopBarComponent implements OnInit {
   isLoggedIn$: Observable<boolean>;

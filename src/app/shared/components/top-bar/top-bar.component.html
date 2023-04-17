@@ -27,9 +27,17 @@
           Settings
         </li>
         <li
-          class="text-gray-500 ml-2"
+          class="text-gray-500 ml-2 flex items-center"
           [routerLink]="['/profiles', (currentUser$ | async).username]"
         >
+          <img
+            *ngIf="(currentUser$ | async).image"
+            [ngSrc]="(currentUser$ | async).image"
+            width="25"
+            height="25"
+            alt=""
+            class="rounded-full mr-1"
+          />
           {{ (currentUser$ | async).username }}
         </li>
       </ng-container>
