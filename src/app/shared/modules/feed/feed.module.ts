@@ -11,20 +11,22 @@ import { ErrorMessageComponent } from '../../components/error-message/error-mess
 import { LoadingComponent } from '../../components/loading/loading.component';
 import { PaginationComponent } from '../../components/pagination/pagination.component';
 import {TagListComponent} from "@/app/shared/components/tag-list/tag-list.component";
+import {AddToFavoriteModule} from "@/app/shared/modules/add-to-favorite/add-to-favorite.module";
 
 @NgModule({
   declarations: [FeedComponent],
-  imports: [
-    CommonModule,
-    EffectsModule.forFeature([GetFeedEffect]),
-    StoreModule.forFeature('feed', reducers),
-    RouterLink,
-    NgOptimizedImage,
-    ErrorMessageComponent,
-    LoadingComponent,
-    PaginationComponent,
-    TagListComponent,
-  ],
+    imports: [
+        CommonModule,
+        EffectsModule.forFeature([GetFeedEffect]),
+        StoreModule.forFeature('feed', reducers),
+        RouterLink,
+        NgOptimizedImage,
+        ErrorMessageComponent,
+        LoadingComponent,
+        PaginationComponent,
+        TagListComponent,
+        AddToFavoriteModule,
+    ],
   providers: [FeedService],
   exports: [FeedComponent],
 })
