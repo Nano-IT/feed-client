@@ -46,6 +46,19 @@
             delete
           </button>
         </div>
+        <div class="ml-5">
+          <ac-follow
+            [slug]="article.author.username"
+            [isFollowing]="article.author.following"
+          ></ac-follow>
+        </div>
+        <div class="ml-2">
+          <ac-add-to-favorite
+            [articleSlug]="article.slug"
+            [favoritesCount]="article.favoritesCount"
+            [isFavorite]="article.favorited"
+          ></ac-add-to-favorite>
+        </div>
       </div>
     </div>
   </div>

@@ -10,6 +10,7 @@ import {reducers} from '@/app/user-profile/store/reducers';
 import {FeedModule} from "@/app/shared/modules/feed/feed.module";
 import {FeedTogglerComponent} from "@/app/shared/components/feed-toggler/feed-toggler.component";
 import {LoadingComponent} from "@/app/shared/components/loading/loading.component";
+import {FollowModule} from "@/app/shared/modules/follow/follow.module";
 
 const routes: Routes = [
   {
@@ -33,6 +34,7 @@ const routes: Routes = [
     FeedModule,
     FeedTogglerComponent,
     LoadingComponent,
+    FollowModule,
   ],
   providers: [UserProfileService],
 })

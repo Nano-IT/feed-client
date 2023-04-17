@@ -19,25 +19,21 @@
     </div>
     <p>{{ userProfile.bio }}</p>
     <div class="mt-8 self-end">
-      <ng-template #editProfile>
-        <button
-          class="py-1 px-2 text-sm text-gray-500 border border-gray-500 rounded-sm hover:bg-gray-200"
-        >
-          <span class="text-lg leading-5">+</span>
-          <span class="ml-2">Follow {{ userProfile.username }}</span>
-        </button>
-      </ng-template>
       <a
         [routerLink]="['/settings']"
-        *ngIf="isCurrentUserProfile$ | async; else editProfile"
+        *ngIf="isCurrentUserProfile$ | async"
         class="py-1 px-2 text-sm text-gray-500 border border-gray-500 rounded-sm hover:bg-gray-200"
       >
         Edit Profile Settings
       </a>
+      <ac-follow *ngIf="!(isCurrentUserProfile$ | async)" [slug]="userProfile.username"></ac-follow>
     </div>
   </div>
 </section>
-<section class="max-w-4xl mx-auto p-10" *ngIf="userProfile">
+<section
+  class="max-w-4xl mx-auto p-10"
+  *ngIf="userProfile"
+>
   <ul class="flex">
     <li
       [routerLink]="['/profiles', userProfile.username]"

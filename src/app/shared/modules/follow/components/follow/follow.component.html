@@ -1,0 +1,8 @@
+<button
+  class="py-1 px-2 text-sm text-gray-500 border border-gray-500 rounded-sm hover:bg-gray-200"
+  [ngClass]="bntClass"
+  (click)="handleFollow()"
+>
+  <span class="text-lg leading-5">+</span>
+  <span class="ml-2">{{ isFollowing ? 'Unfollow' : 'Follow' }} {{ slug }}</span>
+</button>

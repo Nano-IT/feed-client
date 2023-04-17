@@ -12,6 +12,8 @@ import {ErrorMessageComponent} from '@/app/shared/components/error-message/error
 import {TagListComponent} from '@/app/shared/components/tag-list/tag-list.component';
 import {ArticleService} from '@/app/article/services/article.service';
 import {DeleteArticleEffect} from '@/app/article/store/effects/deleteArticle.effect';
+import {FollowModule} from "@/app/shared/modules/follow/follow.module";
+import {AddToFavoriteModule} from "@/app/shared/modules/add-to-favorite/add-to-favorite.module";
 
 const routes: Routes = [
   {
@@ -31,6 +33,8 @@ const routes: Routes = [
     ErrorMessageComponent,
     TagListComponent,
     NgOptimizedImage,
+    FollowModule,
+    AddToFavoriteModule,
   ],
   providers: [SharedArticleService, ArticleService],
 })

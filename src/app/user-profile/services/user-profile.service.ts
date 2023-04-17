@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {map, Observable} from 'rxjs';
 import {ProfileInterface} from '@/app/shared/types/profile.interface';
 import {environment} from '@/environments/environment.development';
-import {GetUserProfileResponseInterface} from '@/app/user-profile/types/getUserProfileResponse.interface';
+import {GetUserProfileResponseInterface} from '@/app/shared/types/getUserProfileResponse.interface';
 
 @Injectable({
   providedIn: 'root',
