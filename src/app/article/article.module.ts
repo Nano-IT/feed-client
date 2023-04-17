@@ -14,6 +14,7 @@ import {ArticleService} from '@/app/article/services/article.service';
 import {DeleteArticleEffect} from '@/app/article/store/effects/deleteArticle.effect';
 import {FollowModule} from "@/app/shared/modules/follow/follow.module";
 import {AddToFavoriteModule} from "@/app/shared/modules/add-to-favorite/add-to-favorite.module";
+import {CreateArticleCommentModule} from "@/app/shared/modules/create-article-comment/create-article-comment.module";
 
 const routes: Routes = [
   {
@@ -35,6 +36,7 @@ const routes: Routes = [
     NgOptimizedImage,
     FollowModule,
     AddToFavoriteModule,
+    CreateArticleCommentModule,
   ],
   providers: [SharedArticleService, ArticleService],
 })

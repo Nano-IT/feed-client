@@ -46,19 +46,22 @@
             delete
           </button>
         </div>
-        <div class="ml-5">
-          <ac-follow
-            [slug]="article.author.username"
-            [isFollowing]="article.author.following"
-          ></ac-follow>
-        </div>
-        <div class="ml-2">
-          <ac-add-to-favorite
-            [articleSlug]="article.slug"
-            [favoritesCount]="article.favoritesCount"
-            [isFavorite]="article.favorited"
-          ></ac-add-to-favorite>
-        </div>
+        <ng-template #notAuthorAction>
+          <div class="ml-5">
+            <ac-follow
+              [slug]="article.author.username"
+              [isFollowing]="article.author.following"
+            ></ac-follow>
+          </div>
+          <div class="ml-2">
+            <ac-add-to-favorite
+              [articleSlug]="article.slug"
+              [favoritesCount]="article.favoritesCount"
+              [isFavorite]="article.favorited"
+            ></ac-add-to-favorite>
+          </div>
+        </ng-template>
+
       </div>
     </div>
   </div>
@@ -69,5 +72,10 @@
     <div class="mt-8">
       <ac-tag-list [tags]="article.tagList"></ac-tag-list>
     </div>
+  </div>
+  <div class="max-w-xl mx-auto">
+    <ac-article-create-comment
+      [articleSlug]="article.slug"
+    ></ac-article-create-comment>
   </div>
 </section>
