@@ -29,11 +29,22 @@
             {{ article.createdAt }}
           </span>
         </div>
-        <div *ngIf="isAuthor$ | async" class="ml-2">
-          <a [routerLink]="['/articles', article.slug, 'edit']" class="text-white border border-white p-2 rounded-md">
+        <div
+          *ngIf="isAuthor$ | async"
+          class="ml-2"
+        >
+          <a
+            [routerLink]="['/articles', article.slug, 'edit']"
+            class="text-white border border-white p-2 rounded-md"
+          >
             Edit Article
           </a>
-          <button  class="text-red-700 border border-red-700 p-2 rounded-md ml-2 my-0" (click)="deleteArticle()">delete</button>
+          <button
+            class="text-red-700 border border-red-700 p-2 rounded-md ml-2 my-0"
+            (click)="deleteArticle()"
+          >
+            delete
+          </button>
         </div>
       </div>
     </div>

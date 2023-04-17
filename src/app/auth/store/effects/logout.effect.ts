@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { PersistenceService } from '@/app/shared/services/persistence.service';
-import { logoutAction } from '@/app/auth/store/actions/sync.action';
-import { tap } from 'rxjs';
-import { Router } from '@angular/router';
+import {Injectable} from '@angular/core';
+import {Actions, createEffect, ofType} from '@ngrx/effects';
+import {PersistenceService} from '@/app/shared/services/persistence.service';
+import {logoutAction} from '@/app/auth/store/actions/sync.action';
+import {tap} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Injectable()
 export class LogoutEffect {

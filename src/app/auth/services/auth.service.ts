@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { RegisterRequestInterface } from '../types/registerRequest.interface';
-import { map, Observable } from 'rxjs';
-import { CurrentUserInterface } from '../../shared/types/currentUser.interface';
-import { HttpClient } from '@angular/common/http';
-import { AuthResponseInterface } from '../types/authResponse.interface';
-import { environment } from 'src/environments/environment.development';
-import { LoginRequestInterface } from '../types/loginRequest.interface';
-import { CurrentUserInputInterface } from '@/app/shared/types/currentUserInput.interface';
+import {Injectable} from '@angular/core';
+import {RegisterRequestInterface} from '../types/registerRequest.interface';
+import {map, Observable} from 'rxjs';
+import {CurrentUserInterface} from '../../shared/types/currentUser.interface';
+import {HttpClient} from '@angular/common/http';
+import {AuthResponseInterface} from '../types/authResponse.interface';
+import {environment} from 'src/environments/environment.development';
+import {LoginRequestInterface} from '../types/loginRequest.interface';
+import {CurrentUserInputInterface} from '@/app/shared/types/currentUserInput.interface';
 
 @Injectable()
 export class AuthService {
@@ -43,7 +43,7 @@ export class AuthService {
     const url = `${environment.apiUrl}/user`;
 
     return this.http
-      .put<AuthResponseInterface>(url, { user })
+      .put<AuthResponseInterface>(url, {user})
       .pipe(map(this.getUser));
   }
 }

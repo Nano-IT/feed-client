@@ -6,17 +6,17 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
-import { select, Store } from '@ngrx/store';
-import { getFeedAction } from '../../store/actions/getFeed.action';
-import { Observable, Subscription } from 'rxjs';
-import { GetFeedResponseInterface } from '../../types/getFeedResponse.interface';
+import {select, Store} from '@ngrx/store';
+import {getFeedAction} from '../../store/actions/getFeed.action';
+import {Observable, Subscription} from 'rxjs';
+import {GetFeedResponseInterface} from '../../types/getFeedResponse.interface';
 import {
   errorSelector,
   feedSelector,
   isLoadingSelector,
 } from '../../store/selectors';
-import { environment } from 'src/environments/environment.development';
-import { ActivatedRoute, Router } from '@angular/router';
+import {environment} from 'src/environments/environment.development';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'ac-feed',
@@ -25,7 +25,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FeedComponent implements OnInit, OnDestroy, OnChanges {
   @Input() apiUrl: string;
-  @Input() tagName: string;
 
   isLoading$: Observable<boolean>;
   error$: Observable<string | null>;
@@ -85,10 +84,6 @@ export class FeedComponent implements OnInit, OnDestroy, OnChanges {
       offset,
     };
 
-    if (this.tagName) {
-      params.tag = this.tagName;
-    }
-
-    this.store.dispatch(getFeedAction({ url: this.apiUrl, params }));
+    this.store.dispatch(getFeedAction({url: this.apiUrl, params}));
   }
 }

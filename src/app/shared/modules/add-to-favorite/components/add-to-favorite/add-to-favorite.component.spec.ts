@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AddToFavoriteComponent } from './add-to-favorite.component';
+import {AddToFavoriteComponent} from './add-to-favorite.component';
 
 describe('AddToFavoriteComponent', () => {
   let component: AddToFavoriteComponent;
@@ -8,9 +8,8 @@ describe('AddToFavoriteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddToFavoriteComponent ]
-    })
-    .compileComponents();
+      declarations: [AddToFavoriteComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AddToFavoriteComponent);
     component = fixture.componentInstance;

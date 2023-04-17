@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { select, Store } from '@ngrx/store';
-import { filter, map, Observable, Subscription } from 'rxjs';
-import { ArticleInterface } from '@/app/shared/types/article.interface';
+import {Component, OnInit} from '@angular/core';
+import {select, Store} from '@ngrx/store';
+import {filter, map, Observable, Subscription} from 'rxjs';
+import {ArticleInterface} from '@/app/shared/types/article.interface';
 import {
   articleSelector,
   isLoadingSelector,
   isSubmittingSelector,
   validationErrorsSelector,
 } from '@/app/edit-article/store/selectors';
-import { ActivatedRoute } from '@angular/router';
-import { BackendErrorsInterface } from '@/app/shared/types/backendErrors.interface';
-import { ArticleInputInterface } from '@/app/shared/types/articleInput.interface';
-import { updateArticleAction } from '@/app/edit-article/store/actions/updateArticle.action';
-import { getArticleAction } from '@/app/edit-article/store/actions/getArticle.action';
+import {ActivatedRoute} from '@angular/router';
+import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
+import {ArticleInputInterface} from '@/app/shared/types/articleInput.interface';
+import {updateArticleAction} from '@/app/edit-article/store/actions/updateArticle.action';
+import {getArticleAction} from '@/app/edit-article/store/actions/getArticle.action';
 
 @Component({
   selector: 'ac-edit-article',
@@ -60,10 +60,10 @@ export class EditArticleComponent implements OnInit {
   }
 
   fetchData(): void {
-    this.store.dispatch(getArticleAction({ slug: this.slug }));
+    this.store.dispatch(getArticleAction({slug: this.slug}));
   }
 
   onSubmit(articleInput: ArticleInputInterface): void {
-    this.store.dispatch(updateArticleAction({ articleInput, slug: this.slug }));
+    this.store.dispatch(updateArticleAction({articleInput, slug: this.slug}));
   }
 }

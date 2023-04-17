@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { GlobalFeedComponent } from './global-feed.component';
+import {GlobalFeedComponent} from './global-feed.component';
 
 describe('GlobalFeedComponent', () => {
   let component: GlobalFeedComponent;
@@ -8,9 +8,8 @@ describe('GlobalFeedComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GlobalFeedComponent ]
-    })
-    .compileComponents();
+      declarations: [GlobalFeedComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(GlobalFeedComponent);
     component = fixture.componentInstance;

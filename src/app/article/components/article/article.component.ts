@@ -1,17 +1,17 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { select, Store } from '@ngrx/store';
-import { getArticleAction } from '@/app/article/store/actions/getArticle.action';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {select, Store} from '@ngrx/store';
+import {getArticleAction} from '@/app/article/store/actions/getArticle.action';
 import {
   errorSelector,
   articleSelector,
   isLoadingSelector,
 } from '@/app/article/store/selectors';
-import { combineLatest, map, Observable, Subscription } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
-import { ArticleInterface } from '@/app/shared/types/article.interface';
-import { currentUserSelector } from '@/app/auth/store/selectors';
-import { CurrentUserInterface } from '@/app/shared/types/currentUser.interface';
-import { deleteArticleAction } from '@/app/article/store/actions/deleteArticle.action';
+import {combineLatest, map, Observable, Subscription} from 'rxjs';
+import {ActivatedRoute} from '@angular/router';
+import {ArticleInterface} from '@/app/shared/types/article.interface';
+import {currentUserSelector} from '@/app/auth/store/selectors';
+import {CurrentUserInterface} from '@/app/shared/types/currentUser.interface';
+import {deleteArticleAction} from '@/app/article/store/actions/deleteArticle.action';
 
 @Component({
   selector: 'ac-article',
@@ -76,10 +76,10 @@ export class ArticleComponent implements OnInit, OnDestroy {
   }
 
   fetchArticle(): void {
-    this.store.dispatch(getArticleAction({ slug: this.slug }));
+    this.store.dispatch(getArticleAction({slug: this.slug}));
   }
 
   deleteArticle(): void {
-    this.store.dispatch(deleteArticleAction({ slug: this.slug }));
+    this.store.dispatch(deleteArticleAction({slug: this.slug}));
   }
 }

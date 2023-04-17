@@ -1,5 +1,5 @@
-import { BackendErrorsInterface } from '@/app/shared/types/backendErrors.interface';
-import { ArticleInterface } from '@/app/shared/types/article.interface';
+import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
+import {ArticleInterface} from '@/app/shared/types/article.interface';
 
 export interface UpdateArticleStateInterface {
   isSubmitting: boolean;

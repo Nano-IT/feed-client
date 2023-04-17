@@ -1,4 +1,7 @@
-<div class="w-full" *ngIf="currentUser">
+<div
+  class="w-full"
+  *ngIf="currentUser"
+>
   <div class="max-w-4xl mx-auto mt-5">
     <ac-backend-error-messages
       *ngIf="errors$ | async"

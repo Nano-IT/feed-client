@@ -1,5 +1,5 @@
-import { SettingsStateInterface } from '@/app/settings/types/settingsState.interface';
-import { Action, createReducer, on } from '@ngrx/store';
+import {SettingsStateInterface} from '@/app/settings/types/settingsState.interface';
+import {Action, createReducer, on} from '@ngrx/store';
 import {
   updateCurrentUserAction,
   updateCurrentUserFailureAction,

@@ -1,8 +1,8 @@
-import { createAction, props } from '@ngrx/store';
-import { ActionTypes } from '@/app/edit-article/store/actionTypes';
-import { ArticleInputInterface } from '@/app/shared/types/articleInput.interface';
-import { ArticleInterface } from '@/app/shared/types/article.interface';
-import { BackendErrorsInterface } from '@/app/shared/types/backendErrors.interface';
+import {createAction, props} from '@ngrx/store';
+import {ActionTypes} from '@/app/edit-article/store/actionTypes';
+import {ArticleInputInterface} from '@/app/shared/types/articleInput.interface';
+import {ArticleInterface} from '@/app/shared/types/article.interface';
+import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
 
 export const updateArticleAction = createAction(
   ActionTypes.UPDATE_ARTICLE,

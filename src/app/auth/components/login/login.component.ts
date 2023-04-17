@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { BackendErrorsInterface } from '@/app/shared/types/backendErrors.interface';
-import { select, Store } from '@ngrx/store';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
+import {select, Store} from '@ngrx/store';
 import {
   isSubmittingSelector,
   validationErrorsSelector,
 } from '../../store/selectors';
-import { loginAction } from '../../store/actions/login.action';
-import { LoginRequestInterface } from '../../types/loginRequest.interface';
+import {loginAction} from '../../store/actions/login.action';
+import {LoginRequestInterface} from '../../types/loginRequest.interface';
 
 @Component({
   selector: 'ac-login',
@@ -43,6 +43,6 @@ export class LoginComponent implements OnInit {
     const request: LoginRequestInterface = {
       user: this.form.value,
     };
-    this.store.dispatch(loginAction({ request }));
+    this.store.dispatch(loginAction({request}));
   }
 }

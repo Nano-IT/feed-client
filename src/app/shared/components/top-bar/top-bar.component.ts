@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { CurrentUserInterface } from 'src/app/shared/types/currentUser.interface';
-import { select, Store } from '@ngrx/store';
+import {Component, OnInit} from '@angular/core';
+import {Observable} from 'rxjs';
+import {CurrentUserInterface} from 'src/app/shared/types/currentUser.interface';
+import {select, Store} from '@ngrx/store';
 import {
   currentUserSelector,
   isAnonymousSelector,
   isLoggedInSelector,
 } from 'src/app/auth/store/selectors';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'ac-top-bar',

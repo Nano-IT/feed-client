@@ -1,5 +1,5 @@
-import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { SettingsStateInterface } from '@/app/settings/types/settingsState.interface';
+import {createFeatureSelector, createSelector} from '@ngrx/store';
+import {SettingsStateInterface} from '@/app/settings/types/settingsState.interface';
 
 export const settingsFeatureSelector =
   createFeatureSelector<SettingsStateInterface>('settings');

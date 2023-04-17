@@ -1,4 +1,17 @@
-<div class="flex">
+<div class="flex justify-center" *ngIf="pagesCount > 1">
+  <ng-container *ngIf="displayFirstPage">
+    <a
+      class="mx-1 min-w-[2rem] h-10 flex items-center justify-center rounded-md border border-gray-500"
+      [ngClass]="getPageClass(1)"
+      [routerLink]="url"
+      [queryParams]="{page: 1}"
+    >
+      <span>
+        {{ 1 }}
+      </span>
+    </a>
+    <div class="flex items-end">...</div>
+  </ng-container>
   <a
     *ngFor="let page of pages"
     class="mx-1 min-w-[2rem] h-10 flex items-center justify-center rounded-md border border-gray-500"
@@ -10,4 +23,17 @@
       {{ page }}
     </span>
   </a>
+  <ng-container *ngIf="displayLastPage">
+    <div class="flex items-end">...</div>
+    <a
+      class="mx-1 min-w-[2rem] h-10 flex items-center justify-center rounded-md border border-gray-500"
+      [ngClass]="getPageClass(pagesCount)"
+      [routerLink]="url"
+      [queryParams]="{page: pagesCount}"
+    >
+      <span>
+        {{ pagesCount }}
+      </span>
+    </a>
+  </ng-container>
 </div>

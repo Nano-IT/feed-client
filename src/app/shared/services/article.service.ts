@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
-import { environment } from '@/environments/environment.development';
-import { GetArticleResponseInterface } from '@/app/article/types/getArticleResponse.interface';
-import { ArticleInterface } from '@/app/shared/types/article.interface';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {map, Observable} from 'rxjs';
+import {environment} from '@/environments/environment.development';
+import {GetArticleResponseInterface} from '@/app/article/types/getArticleResponse.interface';
+import {ArticleInterface} from '@/app/shared/types/article.interface';
 
 @Injectable({
   providedIn: 'root',

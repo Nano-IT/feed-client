@@ -1,13 +1,11 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'ac-banner',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './banner.component.html',
-  styleUrls: ['./banner.component.css']
+  styleUrls: ['./banner.component.css'],
 })
-export class BannerComponent {
-
-}
+export class BannerComponent {}

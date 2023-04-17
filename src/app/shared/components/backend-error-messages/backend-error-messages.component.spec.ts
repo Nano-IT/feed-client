@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { BackendErrorMessagesComponent } from './backend-error-messages.component';
+import {BackendErrorMessagesComponent} from './backend-error-messages.component';
 
 describe('BackendErrorMessagesComponent', () => {
   let component: BackendErrorMessagesComponent;
@@ -8,9 +8,8 @@ describe('BackendErrorMessagesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BackendErrorMessagesComponent ]
-    })
-    .compileComponents();
+      declarations: [BackendErrorMessagesComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BackendErrorMessagesComponent);
     component = fixture.componentInstance;

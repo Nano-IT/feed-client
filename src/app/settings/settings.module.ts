@@ -1,14 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SettingsComponent } from './components/settings/settings.component';
-import { RouterModule, Routes } from '@angular/router';
-import { StoreModule } from '@ngrx/store';
-import { reducers } from '@/app/settings/store/reducers';
-import {
-  BackendErrorMessagesComponent
-} from "@/app/shared/components/backend-error-messages/backend-error-messages.component";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {LoadingComponent} from "@/app/shared/components/loading/loading.component";
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {SettingsComponent} from './components/settings/settings.component';
+import {RouterModule, Routes} from '@angular/router';
+import {StoreModule} from '@ngrx/store';
+import {reducers} from '@/app/settings/store/reducers';
+import {BackendErrorMessagesComponent} from '@/app/shared/components/backend-error-messages/backend-error-messages.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {LoadingComponent} from '@/app/shared/components/loading/loading.component';
 
 const routes: Routes = [
   {

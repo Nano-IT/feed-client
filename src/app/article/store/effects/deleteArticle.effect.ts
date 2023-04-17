@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, of, switchMap, map, tap } from 'rxjs';
-import { ArticleService } from '@/app/article/services/article.service';
+import {Injectable} from '@angular/core';
+import {Actions, createEffect, ofType} from '@ngrx/effects';
+import {catchError, of, switchMap, map, tap} from 'rxjs';
+import {ArticleService} from '@/app/article/services/article.service';
 import {
   deleteArticleAction,
   deleteArticleFailureAction,
   deleteArticleSuccessAction,
 } from '@/app/article/store/actions/deleteArticle.action';
-import { Router } from '@angular/router';
+import {Router} from '@angular/router';
 
 @Injectable()
 export class DeleteArticleEffect {
@@ -35,7 +35,7 @@ export class DeleteArticleEffect {
           this.router.navigate(['/']);
         }),
       ),
-    { dispatch: false },
+    {dispatch: false},
   );
 
   constructor(

@@ -1,15 +1,15 @@
-import { createAction, props } from '@ngrx/store';
-import { ActionTypes } from '../actionTypes';
-import { ArticleInterface } from '@/app/shared/types/article.interface';
+import {createAction, props} from '@ngrx/store';
+import {ActionTypes} from '../actionTypes';
+import {ArticleInterface} from '@/app/shared/types/article.interface';
 
 export const getArticleAction = createAction(
   ActionTypes.GET_ARTICLE,
-  props<{ slug: string }>(),
+  props<{slug: string}>(),
 );
 
 export const getArticleSuccessAction = createAction(
   ActionTypes.GET_ARTICLE_SUCCESS,
-  props<{ article: ArticleInterface }>(),
+  props<{article: ArticleInterface}>(),
 );
 
 export const getArticleFailureAction = createAction(

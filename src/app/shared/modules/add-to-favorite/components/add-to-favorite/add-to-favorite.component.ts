@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { addToFavoriteAction } from '@/app/shared/modules/add-to-favorite/store/actions/addToFavorite.action';
+import {Component, Input, OnInit} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {addToFavoriteAction} from '@/app/shared/modules/add-to-favorite/store/actions/addToFavorite.action';
 
 @Component({
   selector: 'ac-add-to-favorite',

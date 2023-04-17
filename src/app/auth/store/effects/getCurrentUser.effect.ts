@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, of, switchMap, map } from 'rxjs';
-import { AuthService } from 'src/app/auth/services/auth.service';
-import { CurrentUserInterface } from 'src/app/shared/types/currentUser.interface';
-import { PersistenceService } from 'src/app/shared/services/persistence.service';
+import {Injectable} from '@angular/core';
+import {Actions, createEffect, ofType} from '@ngrx/effects';
+import {catchError, of, switchMap, map} from 'rxjs';
+import {AuthService} from 'src/app/auth/services/auth.service';
+import {CurrentUserInterface} from 'src/app/shared/types/currentUser.interface';
+import {PersistenceService} from 'src/app/shared/services/persistence.service';
 import {
   getCurrentUserAction,
   getCurrentUserFailureAction,
@@ -24,19 +24,19 @@ export class GetCurrentUserEffect {
 
         return this.authService.getCurrentUser().pipe(
           map((currentUser: CurrentUserInterface) => {
-            return getCurrentUserSuccessAction({ currentUser });
+            return getCurrentUserSuccessAction({currentUser});
           }),
           catchError(() => {
             return of(getCurrentUserFailureAction());
-          })
+          }),
         );
-      })
-    )
+      }),
+    ),
   );
 
   constructor(
     private actions$: Actions,
     private authService: AuthService,
-    private persistenceService: PersistenceService
+    private persistenceService: PersistenceService,
   ) {}
 }

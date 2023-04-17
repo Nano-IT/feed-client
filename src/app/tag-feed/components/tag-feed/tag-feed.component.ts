@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'ac-tag-feed',
@@ -15,6 +15,7 @@ export class TagFeedComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params: any) => {
       this.tagName = params.slug;
+      this.apiUrl = `/articles?tag=${params.slug}`;
     });
   }
 }

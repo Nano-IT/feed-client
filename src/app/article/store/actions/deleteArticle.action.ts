@@ -1,9 +1,9 @@
-import { createAction, props } from '@ngrx/store';
-import { ActionTypes } from '../actionTypes';
+import {createAction, props} from '@ngrx/store';
+import {ActionTypes} from '../actionTypes';
 
 export const deleteArticleAction = createAction(
   ActionTypes.DELETE_ARTICLE,
-  props<{ slug: string }>(),
+  props<{slug: string}>(),
 );
 
 export const deleteArticleSuccessAction = createAction(

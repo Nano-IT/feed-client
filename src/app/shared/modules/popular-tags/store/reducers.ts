@@ -1,5 +1,5 @@
-import { Action, createReducer, on } from '@ngrx/store';
-import { PopularTagsStateInterface } from '@/app/shared/modules/popular-tags/types/popularTagsState.interface';
+import {Action, createReducer, on} from '@ngrx/store';
+import {PopularTagsStateInterface} from '@/app/shared/modules/popular-tags/types/popularTagsState.interface';
 import {
   getPopularTagsAction,
   getPopularTagsFailureAction,
@@ -19,7 +19,7 @@ const feedReducer = createReducer(
     (state): PopularTagsStateInterface => ({
       ...state,
       isLoading: true,
-    })
+    }),
   ),
   on(
     getPopularTagsSuccessAction,
@@ -27,15 +27,15 @@ const feedReducer = createReducer(
       ...state,
       isLoading: false,
       data: action.popularTags,
-    })
+    }),
   ),
   on(
     getPopularTagsFailureAction,
     (state): PopularTagsStateInterface => ({
       ...state,
       isLoading: false,
-    })
-  )
+    }),
+  ),
 );
 
 export function reducers(state: PopularTagsStateInterface, action: Action) {

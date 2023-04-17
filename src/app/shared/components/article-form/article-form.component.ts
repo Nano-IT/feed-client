@@ -1,10 +1,10 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ArticleInputInterface } from '@/app/shared/types/articleInput.interface';
-import { BackendErrorsInterface } from '@/app/shared/types/backendErrors.interface';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { BackendErrorMessagesComponent } from '@/app/shared/components/backend-error-messages/backend-error-messages.component';
-import { LoadingComponent } from '@/app/shared/components/loading/loading.component';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ArticleInputInterface} from '@/app/shared/types/articleInput.interface';
+import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
+import {FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
+import {BackendErrorMessagesComponent} from '@/app/shared/components/backend-error-messages/backend-error-messages.component';
+import {LoadingComponent} from '@/app/shared/components/loading/loading.component';
 
 @Component({
   selector: 'ac-article-form',

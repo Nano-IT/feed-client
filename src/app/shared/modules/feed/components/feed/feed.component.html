@@ -50,16 +50,18 @@
       {{ article.description }}
     </p>
     <div class="flex items-center justify-between">
-      <button>Read more</button>
+      <button class="text-gray-400" [routerLink]="['/articles', article.slug]">Read more</button>
       <ac-tag-list [tags]="article.tagList"></ac-tag-list>
     </div>
   </div>
-  <ac-pagination
-    [total]="(feed$ | async).articlesCount"
-    [limit]="limit"
-    [currentPage]="currentPage"
-    [url]="baseUrl"
-  ></ac-pagination>
+  <div class="mx-auto w-full">
+    <ac-pagination
+      [total]="(feed$ | async).articlesCount"
+      [limit]="limit"
+      [currentPage]="currentPage"
+      [url]="baseUrl"
+    ></ac-pagination>
+  </div>
   <div
     *ngIf="!(feed$ | async).articlesCount && !(isLoading$ | async)"
     class="p-4 text-gray-400"

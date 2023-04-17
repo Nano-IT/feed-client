@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { ArticleInputInterface } from '@/app/shared/types/articleInput.interface';
-import { Observable } from 'rxjs';
-import { BackendErrorsInterface } from '@/app/shared/types/backendErrors.interface';
-import { select, Store } from '@ngrx/store';
+import {Component, OnInit} from '@angular/core';
+import {ArticleInputInterface} from '@/app/shared/types/articleInput.interface';
+import {Observable} from 'rxjs';
+import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
+import {select, Store} from '@ngrx/store';
 import {
   isSubmittingSelector,
   validationErrorsSelector,
 } from '@/app/create-article/store/selectors';
-import { createArticleAction } from '@/app/create-article/store/actions/createArticle.action';
+import {createArticleAction} from '@/app/create-article/store/actions/createArticle.action';
 
 @Component({
   selector: 'ac-create-article',
@@ -37,6 +37,6 @@ export class CreateArticleComponent implements OnInit {
   }
 
   onSubmit(articleInput: ArticleInputInterface): void {
-    this.store.dispatch(createArticleAction({ articleInput }));
+    this.store.dispatch(createArticleAction({articleInput}));
   }
 }

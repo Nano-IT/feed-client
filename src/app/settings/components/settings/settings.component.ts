@@ -1,17 +1,17 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { select, Store } from '@ngrx/store';
-import { updateCurrentUserAction } from '@/app/auth/store/actions/updateCurrentUser.action';
-import { BackendErrorsInterface } from '@/app/shared/types/backendErrors.interface';
-import { filter, Observable, Subscription } from 'rxjs';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {select, Store} from '@ngrx/store';
+import {updateCurrentUserAction} from '@/app/auth/store/actions/updateCurrentUser.action';
+import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
+import {filter, Observable, Subscription} from 'rxjs';
 import {
   isSubmittingSelector,
   validationErrorsSelector,
 } from '@/app/settings/store/selectors';
-import { CurrentUserInterface } from '@/app/shared/types/currentUser.interface';
-import { currentUserSelector } from '@/app/auth/store/selectors';
-import { CurrentUserInputInterface } from '@/app/shared/types/currentUserInput.interface';
-import { logoutAction } from '@/app/auth/store/actions/sync.action';
+import {CurrentUserInterface} from '@/app/shared/types/currentUser.interface';
+import {currentUserSelector} from '@/app/auth/store/selectors';
+import {CurrentUserInputInterface} from '@/app/shared/types/currentUserInput.interface';
+import {logoutAction} from '@/app/auth/store/actions/sync.action';
 
 @Component({
   selector: 'ac-settings',
@@ -64,7 +64,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
       ...this.currentUser,
       ...this.form.value,
     };
-    this.store.dispatch(updateCurrentUserAction({ currentUserInput }));
+    this.store.dispatch(updateCurrentUserAction({currentUserInput}));
   }
 
   logout(): void {

@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { PopularTagType } from '@/app/shared/types/popularTag.type';
-import {RouterLink} from "@angular/router";
+import {Component, Input} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {PopularTagType} from '@/app/shared/types/popularTag.type';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'ac-tag-list',

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { PopularTagType } from '@/app/shared/types/popularTag.type';
-import { select, Store } from '@ngrx/store';
-import { getPopularTagsAction } from '@/app/shared/modules/popular-tags/store/actions/popularTags.action';
+import {Component, OnInit} from '@angular/core';
+import {Observable} from 'rxjs';
+import {PopularTagType} from '@/app/shared/types/popularTag.type';
+import {select, Store} from '@ngrx/store';
+import {getPopularTagsAction} from '@/app/shared/modules/popular-tags/store/actions/popularTags.action';
 import {
   errorSelector,
   isLoadingSelector,

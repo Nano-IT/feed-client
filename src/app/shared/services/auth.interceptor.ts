@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
   HttpInterceptor,
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { PersistenceService } from './persistence.service';
+import {Observable} from 'rxjs';
+import {PersistenceService} from './persistence.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
@@ -14,7 +14,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(
     request: HttpRequest<unknown>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
     const token = this.persistenceService.get('accessToken');
 
@@ -24,7 +24,7 @@ export class AuthInterceptor implements HttpInterceptor {
           setHeaders: {
             Authorization: `Token ${token}`,
           },
-        })
+        }),
       );
     }
     return next.handle(request);

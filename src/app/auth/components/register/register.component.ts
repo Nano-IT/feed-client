@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { select, Store } from '@ngrx/store';
-import { registerAction } from '../../store/actions/register.action';
-import { Observable } from 'rxjs';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {select, Store} from '@ngrx/store';
+import {registerAction} from '../../store/actions/register.action';
+import {Observable} from 'rxjs';
 import {
   isSubmittingSelector,
   validationErrorsSelector,
 } from '../../store/selectors';
-import { RegisterRequestInterface } from '../../types/registerRequest.interface';
-import { BackendErrorsInterface } from '../../../shared/types/backendErrors.interface';
+import {RegisterRequestInterface} from '../../types/registerRequest.interface';
+import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
 
 @Component({
   selector: 'ac-register',
@@ -44,6 +44,6 @@ export class RegisterComponent implements OnInit {
     const request: RegisterRequestInterface = {
       user: this.form.value,
     };
-    this.store.dispatch(registerAction({ request }));
+    this.store.dispatch(registerAction({request}));
   }
 }

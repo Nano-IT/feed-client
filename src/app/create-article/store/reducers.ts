@@ -1,6 +1,6 @@
-import { Action, createReducer, on } from '@ngrx/store';
-import { routerNavigationAction } from '@ngrx/router-store';
-import { CreateArticleStateInterface } from '@/app/create-article/types/createArticleState.interface';
+import {Action, createReducer, on} from '@ngrx/store';
+import {routerNavigationAction} from '@ngrx/router-store';
+import {CreateArticleStateInterface} from '@/app/create-article/types/createArticleState.interface';
 import {
   createArticleAction,
   createArticleFailureAction,

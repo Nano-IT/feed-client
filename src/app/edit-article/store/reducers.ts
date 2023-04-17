@@ -1,5 +1,5 @@
-import { Action, createReducer, on } from '@ngrx/store';
-import { routerNavigationAction } from '@ngrx/router-store';
+import {Action, createReducer, on} from '@ngrx/store';
+import {routerNavigationAction} from '@ngrx/router-store';
 import {
   updateArticleAction,
   updateArticleFailureAction,
@@ -10,7 +10,7 @@ import {
   getArticleFailureAction,
   getArticleSuccessAction,
 } from '@/app/edit-article/store/actions/getArticle.action';
-import {UpdateArticleStateInterface} from "@/app/edit-article/types/updateArticleState.interface";
+import {UpdateArticleStateInterface} from '@/app/edit-article/types/updateArticleState.interface';
 
 const initialState: UpdateArticleStateInterface = {
   validationErrors: null,

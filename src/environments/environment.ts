@@ -1,4 +1,4 @@
 export const environment = {
   apiUrl: 'https://api.realworld.io/api',
-  limit: 10
+  limit: 10,
 };
