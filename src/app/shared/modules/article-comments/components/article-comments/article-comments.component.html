@@ -1,0 +1,42 @@
+<ac-loading *ngIf="isLoading$ | async"></ac-loading>
+<div *ngIf="articleComments$ | async">
+  <div
+    class="border border-gray-300 mb-2 rounded-md"
+    *ngFor="let articleComment of articleComments$ | async"
+  >
+    <p class="p-5 bg-white">
+      {{ articleComment.body }}
+    </p>
+    <div
+      *ngIf="articleComment.author"
+      class="flex items-center justify-between p-3 bg-stone-200"
+    >
+      <div>
+        <img
+          *ngIf="articleComment.author.image"
+          [ngSrc]="articleComment.author.image"
+          width="20"
+          height="20"
+          alt=""
+          class="rounded-full"
+          [routerLink]="['/profiles', articleComment.author.username]"
+        />
+        <a
+          class="ml-2 text-sm leading-5 text-green-400 hover:underline"
+          [routerLink]="['/profiles', articleComment.author.username]"
+          >{{ articleComment.author.username }}</a
+        >
+        <span class="text-xs ml-2 leading-5 text-gray-500">
+          {{ articleComment.createdAt | date }}
+        </span>
+      </div>
+      <button
+        *ngIf="(currentUser$ | async).username === articleComment.author.username"
+        class="self-end"
+        (click)="deleteArticleComment(articleComment.id)"
+      >
+        &#10006;
+      </button>
+    </div>
+  </div>
+</div>

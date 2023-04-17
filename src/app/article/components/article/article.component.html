@@ -61,7 +61,6 @@
             ></ac-add-to-favorite>
           </div>
         </ng-template>
-
       </div>
     </div>
   </div>
@@ -77,5 +76,8 @@
     <ac-article-create-comment
       [articleSlug]="article.slug"
     ></ac-article-create-comment>
+    <div class="mt-5">
+      <ac-article-comments [slug]="article.slug"></ac-article-comments>
+    </div>
   </div>
 </section>

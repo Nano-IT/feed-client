@@ -15,6 +15,7 @@ import {DeleteArticleEffect} from '@/app/article/store/effects/deleteArticle.eff
 import {FollowModule} from "@/app/shared/modules/follow/follow.module";
 import {AddToFavoriteModule} from "@/app/shared/modules/add-to-favorite/add-to-favorite.module";
 import {CreateArticleCommentModule} from "@/app/shared/modules/create-article-comment/create-article-comment.module";
+import {ArticleCommentsModule} from "@/app/shared/modules/article-comments/article-comments.module";
 
 const routes: Routes = [
   {
@@ -37,6 +38,7 @@ const routes: Routes = [
     FollowModule,
     AddToFavoriteModule,
     CreateArticleCommentModule,
+    ArticleCommentsModule,
   ],
   providers: [SharedArticleService, ArticleService],
 })
