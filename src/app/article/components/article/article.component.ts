@@ -71,7 +71,6 @@ export class ArticleComponent implements OnInit, OnDestroy {
     this.articleSubscription = this.store
       .pipe(select(articleSelector))
       .subscribe((article) => {
-        console.log(article)
         this.article = article;
       });
   }

@@ -1,6 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Store} from '@ngrx/store';
+import {select, Store} from '@ngrx/store';
 import {addToFavoriteAction} from '@/app/shared/modules/add-to-favorite/store/actions/addToFavorite.action';
+import {currentUserSelector} from '@/app/auth/store/selectors';
+import {Observable} from 'rxjs';
+import {CurrentUserInterface} from '@/app/shared/types/currentUser.interface';
 
 @Component({
   selector: 'ac-add-to-favorite',
@@ -13,6 +16,7 @@ export class AddToFavoriteComponent implements OnInit {
   @Input('favoritesCount') favoritesCountProp: number;
 
   favoritesCount: number;
+  currentUser$: Observable<CurrentUserInterface | null>;
   isFavorite: boolean;
 
   constructor(private store: Store) {}
@@ -28,6 +32,7 @@ export class AddToFavoriteComponent implements OnInit {
   ngOnInit(): void {
     this.favoritesCount = this.favoritesCountProp;
     this.isFavorite = this.isFavoriteProp;
+    this.currentUser$ = this.store.pipe(select(currentUserSelector));
   }
 
   handleLike(): void {

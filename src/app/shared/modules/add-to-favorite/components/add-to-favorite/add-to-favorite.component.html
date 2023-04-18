@@ -1,8 +1,18 @@
 <button
   (click)="handleLike()"
+  *ngIf="currentUser$ | async; else noAuthContent"
   class="p-1 text-sm leading-5 border border-green-500 rounded-md"
   [ngClass]="bntClass"
 >
   <span class="text-green-500">&#x2764;</span>
   <span class="ml-1">{{ favoritesCount }}</span>
 </button>
+<ng-template #noAuthContent>
+
+  <span
+    class="p-1 text-sm leading-5 border rounded-md border-green-500 select-none"
+  >
+    <span class="text-green-500">&#x2764;</span>
+    <span class="ml-1">{{ favoritesCount }}</span>
+  </span>
+</ng-template>

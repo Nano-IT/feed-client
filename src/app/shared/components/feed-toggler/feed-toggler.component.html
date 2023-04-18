@@ -2,7 +2,7 @@
   <ul class="flex">
     <li
       [routerLink]="['/feed']"
-      *ngIf="isLoggedIn$"
+      *ngIf="isLoggedIn$ | async"
       class="p-2 mx-1 cursor-pointer"
       [ngClass]="isActive('/feed')"
     >
