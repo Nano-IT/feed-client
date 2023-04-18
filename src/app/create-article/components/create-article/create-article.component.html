@@ -1,3 +1,7 @@
+<ac-error-message
+  *ngIf="errorsMessage$ | async"
+  [errorMessage]="errorsMessage$ | async"
+></ac-error-message>
 <ac-article-form
   [initialValues]="initialValues"
   (articleSubmit)="onSubmit($event)"

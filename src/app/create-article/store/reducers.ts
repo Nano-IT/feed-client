@@ -10,6 +10,7 @@ import {
 const initialState: CreateArticleStateInterface = {
   validationErrors: null,
   isSubmitting: false,
+  errorMessage: null,
 };
 
 const createArticleReducer = createReducer(
@@ -19,6 +20,7 @@ const createArticleReducer = createReducer(
     (state): CreateArticleStateInterface => ({
       ...state,
       isSubmitting: true,
+      errorMessage: null,
     }),
   ),
   on(
@@ -26,6 +28,7 @@ const createArticleReducer = createReducer(
     (state): CreateArticleStateInterface => ({
       ...state,
       isSubmitting: false,
+      errorMessage: null,
     }),
   ),
   on(
@@ -34,6 +37,7 @@ const createArticleReducer = createReducer(
       ...state,
       isSubmitting: false,
       validationErrors: action.errors,
+      errorMessage: action.errorMessage,
     }),
   ),
   on(routerNavigationAction, (): CreateArticleStateInterface => initialState),

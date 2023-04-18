@@ -26,6 +26,7 @@ export class CreateArticleEffect {
             return of(
               createArticleFailureAction({
                 errors: errorResponse.error.errors,
+                errorMessage: errorResponse.error.message,
               }),
             );
           }),

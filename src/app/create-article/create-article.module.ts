@@ -9,6 +9,7 @@ import {CreateArticleEffect} from '@/app/create-article/store/effects/createArti
 import {StoreModule} from '@ngrx/store';
 import {reducers} from '@/app/create-article/store/reducers';
 import {ArticleFormComponent} from '@/app/shared/components/article-form/article-form.component';
+import {ErrorMessageComponent} from "@/app/shared/components/error-message/error-message.component";
 
 const routes: Routes = [
   {
@@ -19,14 +20,15 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [CreateArticleComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    ArticleFormComponent,
-    ReactiveFormsModule,
-    EffectsModule.forFeature([CreateArticleEffect]),
-    StoreModule.forFeature('createArticle', reducers),
-  ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        ArticleFormComponent,
+        ReactiveFormsModule,
+        EffectsModule.forFeature([CreateArticleEffect]),
+        StoreModule.forFeature('createArticle', reducers),
+        ErrorMessageComponent,
+    ],
   providers: [CreateArticleService],
 })
 export class CreateArticleModule {}

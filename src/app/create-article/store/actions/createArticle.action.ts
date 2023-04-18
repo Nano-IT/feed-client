@@ -22,5 +22,6 @@ export const createArticleFailureAction = createAction(
   ActionTypes.CREATE_ARTICLE_FAILURE,
   props<{
     errors: BackendErrorsInterface;
+    errorMessage: string;
   }>(),
 );

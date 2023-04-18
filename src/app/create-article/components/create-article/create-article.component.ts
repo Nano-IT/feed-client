@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
 import {select, Store} from '@ngrx/store';
 import {
+  errorMessageSelector,
   isSubmittingSelector,
   validationErrorsSelector,
 } from '@/app/create-article/store/selectors';
@@ -24,6 +25,7 @@ export class CreateArticleComponent implements OnInit {
 
   isSubmitting$: Observable<boolean>;
   backendErrors$: Observable<BackendErrorsInterface | null>;
+  errorsMessage$: Observable<string | null>;
 
   constructor(private store: Store) {}
 
@@ -34,6 +36,7 @@ export class CreateArticleComponent implements OnInit {
   initializeValues(): void {
     this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector));
     this.backendErrors$ = this.store.pipe(select(validationErrorsSelector));
+    this.errorsMessage$ = this.store.pipe(select(errorMessageSelector));
   }
 
   onSubmit(articleInput: ArticleInputInterface): void {

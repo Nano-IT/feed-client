@@ -13,3 +13,8 @@ export const validationErrorsSelector = createSelector(
   createArticleFeatureSelector,
   (state: CreateArticleStateInterface) => state.validationErrors,
 );
+
+export const errorMessageSelector = createSelector(
+  createArticleFeatureSelector,
+  (state: CreateArticleStateInterface) => state.errorMessage,
+);
