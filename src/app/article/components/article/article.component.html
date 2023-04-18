@@ -10,6 +10,7 @@
       <div class="flex items-center mt-5">
         <div>
           <img
+            *ngIf="article.author.image"
             [routerLink]="['/profiles', article.author.username]"
             [ngSrc]="article.author.image"
             alt=""

@@ -1,9 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {map, Observable} from 'rxjs';
+import {Observable} from 'rxjs';
 import {ProfileInterface} from '@/app/shared/types/profile.interface';
 import {environment} from '@/environments/environment.development';
-import {GetUserProfileResponseInterface} from '@/app/shared/types/getUserProfileResponse.interface';
 
 @Injectable()
 export class FollowService {
@@ -11,15 +10,11 @@ export class FollowService {
 
   followUser(slug: string): Observable<ProfileInterface> {
     const url = `${environment.apiUrl}/profiles/${slug}/follow`;
-    return this.http.post(url, {}).pipe(map(this.getUserProfile));
+    return this.http.post<ProfileInterface>(url, {});
   }
 
   unfollowUser(slug: string): Observable<ProfileInterface> {
     const url = `${environment.apiUrl}/profiles/${slug}/follow`;
-    return this.http.delete(url).pipe(map(this.getUserProfile));
-  }
-
-  getUserProfile(response: GetUserProfileResponseInterface): ProfileInterface {
-    return response.profile;
+    return this.http.delete<ProfileInterface>(url);
   }
 }

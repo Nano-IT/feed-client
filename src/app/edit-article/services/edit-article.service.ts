@@ -1,8 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ArticleInputInterface} from '@/app/shared/types/articleInput.interface';
-import {map, Observable} from 'rxjs';
-import {SaveArticleResponseInterface} from '@/app/shared/types/saveArticleResponse.interface';
+import {Observable} from 'rxjs';
 import {environment} from '@/environments/environment.development';
 import {ArticleInterface} from '@/app/shared/types/article.interface';
 
@@ -16,8 +15,6 @@ export class EditArticleService {
   ): Observable<ArticleInterface> {
     const fullUrl = `${environment.apiUrl}/articles/${slug}`;
 
-    return this.http
-      .put<SaveArticleResponseInterface>(fullUrl, {article})
-      .pipe(map((response: SaveArticleResponseInterface) => response.article));
+    return this.http.put<ArticleInterface>(fullUrl, article);
   }
 }

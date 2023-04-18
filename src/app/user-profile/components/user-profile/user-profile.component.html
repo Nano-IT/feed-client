@@ -26,7 +26,11 @@
       >
         Edit Profile Settings
       </a>
-      <ac-follow *ngIf="!(isCurrentUserProfile$ | async)" [slug]="userProfile.username"></ac-follow>
+      <ac-follow
+        *ngIf="!(isCurrentUserProfile$ | async)"
+        [slug]="userProfile.username"
+        [isFollowing]="userProfile.following">
+      ></ac-follow>
     </div>
   </div>
 </section>
