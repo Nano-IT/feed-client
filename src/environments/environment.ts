@@ -1,4 +1,4 @@
 export const environment = {
-  apiUrl: 'https://api.realworld.io/api',
+  apiUrl: 'https://api.nanoit.dev/api',
   limit: 10,
 };
