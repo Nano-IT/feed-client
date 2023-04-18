@@ -16,10 +16,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'architecture-course'`, () => {
+  it(`should have as title 'feed-client'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('architecture-course');
+    expect(app.title).toEqual('feed-client');
   });
 
   it('should render title', () => {
@@ -27,7 +27,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.content span')?.textContent).toContain(
-      'architecture-course app is running!',
+      'feed-client app is running!',
     );
   });
 });

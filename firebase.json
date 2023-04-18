@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/architecture-course",
+    "public": "dist/feed-client",
     "ignore": [
       "firebase.json",
       "**/.*",

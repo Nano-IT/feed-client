@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "architecture-course": {
+    "feed-client": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/architecture-course",
+            "outputPath": "dist/feed-client",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -66,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "architecture-course:build:production"
+              "browserTarget": "feed-client:build:production"
             },
             "development": {
-              "browserTarget": "architecture-course:build:development"
+              "browserTarget": "feed-client:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +77,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "architecture-course:build"
+            "browserTarget": "feed-client:build"
           }
         },
         "test": {
