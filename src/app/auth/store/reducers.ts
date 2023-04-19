@@ -23,6 +23,7 @@ const initialState: AuthStateInterface = {
   currentUser: null,
   isLoggedIn: null,
   validationErrors: null,
+  errorMessage: null,
 };
 
 const authReducer = createReducer(
@@ -42,6 +43,7 @@ const authReducer = createReducer(
       isSubmitting: false,
       isLoggedIn: true,
       currentUser: action.currentUser,
+      errorMessage: null,
     }),
   ),
   on(
@@ -50,6 +52,7 @@ const authReducer = createReducer(
       ...state,
       isSubmitting: false,
       validationErrors: action.errors,
+      errorMessage: null,
     }),
   ),
   on(
@@ -67,6 +70,7 @@ const authReducer = createReducer(
       isSubmitting: false,
       isLoggedIn: true,
       currentUser: action.currentUser,
+      errorMessage: null,
     }),
   ),
   on(
@@ -75,6 +79,7 @@ const authReducer = createReducer(
       ...state,
       isSubmitting: false,
       validationErrors: action.errors,
+      errorMessage: action.errorMessage
     }),
   ),
   on(

@@ -25,7 +25,10 @@ export class RegisterEffect {
           }),
           catchError((errorResponse: HttpErrorResponse) => {
             return of(
-              registerFailureAction({errors: errorResponse.error.errors}),
+              registerFailureAction({
+                errors: errorResponse.error.errors,
+                errorMessage: errorResponse.error.message,
+              }),
             );
           }),
         );

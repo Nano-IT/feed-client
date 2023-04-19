@@ -4,6 +4,7 @@ import {select, Store} from '@ngrx/store';
 import {registerAction} from '../../store/actions/register.action';
 import {Observable} from 'rxjs';
 import {
+  errorMessageSelector,
   isSubmittingSelector,
   validationErrorsSelector,
 } from '../../store/selectors';
@@ -19,6 +20,7 @@ export class RegisterComponent implements OnInit {
   form!: FormGroup;
   isSubmitting$: Observable<boolean>;
   backendErrors$: Observable<BackendErrorsInterface | null>;
+  errorMessage$: Observable<string | null>;
 
   constructor(private fb: FormBuilder, private store: Store) {}
 
@@ -39,6 +41,7 @@ export class RegisterComponent implements OnInit {
   initializeValues(): void {
     this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector));
     this.backendErrors$ = this.store.pipe(select(validationErrorsSelector));
+    this.errorMessage$ = this.store.pipe(select(errorMessageSelector));
   }
 
   submit(): void {

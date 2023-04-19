@@ -16,6 +16,7 @@ import {GetCurrentUserEffect} from './store/effects/getCurrentUser.effect';
 import {BackendErrorMessagesComponent} from '@/app/shared/components/backend-error-messages/backend-error-messages.component';
 import {UpdateCurrentUserEffect} from '@/app/auth/store/effects/updateCurrentUser.effect';
 import {LogoutEffect} from '@/app/auth/store/effects/logout.effect';
+import {ErrorMessageComponent} from "@/app/shared/components/error-message/error-message.component";
 
 const routes: Routes = [
   {
@@ -30,20 +31,21 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    ReactiveFormsModule,
-    StoreModule.forFeature('auth', reducers),
-    EffectsModule.forFeature([
-      RegisterEffect,
-      LoginEffect,
-      GetCurrentUserEffect,
-      UpdateCurrentUserEffect,
-      LogoutEffect,
-    ]),
-    BackendErrorMessagesComponent,
-  ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        ReactiveFormsModule,
+        StoreModule.forFeature('auth', reducers),
+        EffectsModule.forFeature([
+            RegisterEffect,
+            LoginEffect,
+            GetCurrentUserEffect,
+            UpdateCurrentUserEffect,
+            LogoutEffect,
+        ]),
+        BackendErrorMessagesComponent,
+        ErrorMessageComponent,
+    ],
   exports: [LoginComponent, RegisterComponent],
   providers: [AuthService, PersistenceService],
 })

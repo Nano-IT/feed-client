@@ -15,6 +15,10 @@
           *ngIf="backendErrors$ | async"
           [backendErrors]="backendErrors$ | async"
         ></ac-backend-error-messages>
+        <ac-error-message
+          *ngIf="errorMessage$ | async"
+          [errorMessage]="errorMessage$ | async"
+        ></ac-error-message>
         <form
           class="max-w-lg w-full mx-auto"
           autocomplete="off"

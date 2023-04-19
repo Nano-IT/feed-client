@@ -1,10 +1,10 @@
 <ac-loading *ngIf="isLoading$ | async"></ac-loading>
 <ac-error-message *ngIf="error$ | async"></ac-error-message>
 
-<div *ngIf="feed$ | async">
+<div *ngIf="feed$ | async" class="last:border-b last:border-b-gray-200">
   <div
     *ngFor="let article of (feed$ | async).articles"
-    class="py-5 border-t border-t-gray-200"
+    class="py-5 border-t border-t-gray-200 "
   >
     <div class="flex justify-between">
       <div class="flex items-center">
@@ -15,11 +15,18 @@
           <img
             class="rounded-full"
             [ngSrc]="article.author.image"
-            *ngIf="article.author.image"
+            *ngIf="article.author.image; else defaultAvatar"
             alt=""
             width="32"
             height="32"
           />
+          <ng-template #defaultAvatar>
+            <div
+              class="h-8 w-8 rounded-full bg-stone-200 flex items-center justify-center"
+            >
+              <span class="text-gray-500">T</span>
+            </div>
+          </ng-template>
         </div>
         <div class="flex flex-col ml-2">
           <a
@@ -28,9 +35,9 @@
           >
             {{ article.author.username }}
           </a>
-          <span class="text-sm text-gray-400">{{
-            article.createdAt | date
-          }}</span>
+          <span class="text-sm text-gray-400">
+            {{ article.createdAt | date }}
+          </span>
         </div>
       </div>
       <div>
@@ -51,10 +58,16 @@
       {{ article.description }}
     </p>
     <div class="flex items-center justify-between">
-      <button class="text-gray-400" [routerLink]="['/articles', article.slug]">Read more</button>
+      <button
+        class="text-gray-400"
+        [routerLink]="['/articles', article.slug]"
+      >
+        Read more
+      </button>
       <ac-tag-list [tags]="article.tagList"></ac-tag-list>
     </div>
   </div>
+<!--  <hr class="h-0.5 my-4 bg-gray-100 border-0 rounded dark:bg-gray-200">-->
   <div class="mx-auto w-full">
     <ac-pagination
       [total]="(feed$ | async).articlesCount"

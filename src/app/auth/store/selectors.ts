@@ -28,3 +28,8 @@ export const currentUserSelector = createSelector(
   authFeatureSelector,
   (state: AuthStateInterface) => state.currentUser,
 );
+
+export const errorMessageSelector = createSelector(
+  authFeatureSelector,
+  (state: AuthStateInterface) => state.errorMessage,
+);

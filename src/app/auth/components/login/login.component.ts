@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
 import {select, Store} from '@ngrx/store';
 import {
+  errorMessageSelector,
   isSubmittingSelector,
   validationErrorsSelector,
 } from '../../store/selectors';
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
   form!: FormGroup;
   isSubmitting$: Observable<boolean>;
   backendErrors$: Observable<BackendErrorsInterface | null>;
+  errorMessage$: Observable<string | null>;
 
   constructor(private fb: FormBuilder, private store: Store) {}
 
@@ -37,6 +39,7 @@ export class LoginComponent implements OnInit {
   initializeValues(): void {
     this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector));
     this.backendErrors$ = this.store.pipe(select(validationErrorsSelector));
+    this.errorMessage$ = this.store.pipe(select(errorMessageSelector));
   }
 
   submit(): void {
