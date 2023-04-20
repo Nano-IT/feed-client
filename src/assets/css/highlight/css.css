@@ -1,7 +1,0 @@
-.language-css .hljs-selector-class{
-  @apply text-green-600 font-bold;
-}
-
-.language-css .hljs-attribute {
-  @apply text-cyan-500 font-normal;
-}

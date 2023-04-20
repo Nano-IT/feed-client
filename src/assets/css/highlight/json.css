@@ -1,7 +1,0 @@
-.language-json .hljs-string {
-  @apply text-green-600;
-}
-
-.language-json .hljs-number {
-  @apply text-blue-600;
-}
