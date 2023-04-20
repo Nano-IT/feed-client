@@ -8,7 +8,7 @@ import {getCurrentUserAction} from './auth/store/actions/getCurrentUser.action';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = 'feed-client';
+  title: string = 'feed-client';
 
   constructor(private store: Store) {}
 

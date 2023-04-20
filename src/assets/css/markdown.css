@@ -1,3 +1,5 @@
+@import "./highlight";
+
 .markdown h1 {
   @apply text-[32px] font-bold my-5;
 }
@@ -26,27 +28,27 @@
 }
 
 .markdown code {
-  @apply bg-gray-200 p-1;
+  @apply bg-gray-200 p-1 text-sm;
 }
 
 .markdown pre {
-  @apply bg-gray-200 p-2 text-xs;
+  @apply bg-gray-100 p-2 text-xs my-2;
 }
 
-.markdown  .language-json {
-  @apply text-green-700
+.markdown pre code {
+  @apply bg-transparent;
 }
 
 .markdown table {
-  @apply w-full;
+  @apply w-full border-collapse;
 }
 
 .markdown th {
-  @apply bg-gray-300;
+  @apply bg-gray-200;
 }
 
 .markdown td, th {
-  @apply p-2;
+  @apply p-2 border border-gray-200;
 }
 
 
@@ -61,3 +63,9 @@
 .markdown tr .center{
   @apply text-center;
 }
+
+/*.hljs-title {*/
+/*  @apply text-indigo-500;*/
+/*}*/
+
+

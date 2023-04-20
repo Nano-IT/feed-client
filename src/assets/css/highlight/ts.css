@@ -1,0 +1,25 @@
+.language-ts, .language-js .hljs-string {
+  @apply text-green-600;
+}
+
+.language-ts, .language-js .hljs-number {
+  @apply text-blue-600;
+}
+
+.language-ts, .language-js  .hljs-keyword,
+.hljs-built_in {
+  @apply text-red-800;
+}
+
+.language-ts, .language-js  .hljs-attr,
+.hljs-property {
+  @apply text-blue-800;
+}
+
+.language-ts, .language-js  .function_ {
+  @apply text-violet-500;
+}
+
+.language-ts, .language-js  .class_ {
+  @apply text-cyan-500;
+}
