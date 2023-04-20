@@ -16,6 +16,7 @@ import {FollowModule} from "@/app/shared/modules/follow/follow.module";
 import {AddToFavoriteModule} from "@/app/shared/modules/add-to-favorite/add-to-favorite.module";
 import {CreateArticleCommentModule} from "@/app/shared/modules/create-article-comment/create-article-comment.module";
 import {ArticleCommentsModule} from "@/app/shared/modules/article-comments/article-comments.module";
+import {MarkdownModule} from "@/app/shared/pipes/markdown/markdown.module";
 
 const routes: Routes = [
   {
@@ -26,20 +27,21 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [ArticleComponent],
-  imports: [
-    CommonModule,
-    StoreModule.forFeature('article', reducers),
-    EffectsModule.forFeature([GetArticleEffect, DeleteArticleEffect]),
-    RouterModule.forChild(routes),
-    LoadingComponent,
-    ErrorMessageComponent,
-    TagListComponent,
-    NgOptimizedImage,
-    FollowModule,
-    AddToFavoriteModule,
-    CreateArticleCommentModule,
-    ArticleCommentsModule,
-  ],
+    imports: [
+        CommonModule,
+        StoreModule.forFeature('article', reducers),
+        EffectsModule.forFeature([GetArticleEffect, DeleteArticleEffect]),
+        RouterModule.forChild(routes),
+        LoadingComponent,
+        ErrorMessageComponent,
+        TagListComponent,
+        NgOptimizedImage,
+        FollowModule,
+        AddToFavoriteModule,
+        CreateArticleCommentModule,
+        ArticleCommentsModule,
+        MarkdownModule,
+    ],
   providers: [SharedArticleService, ArticleService],
 })
 export class ArticleModule {}
