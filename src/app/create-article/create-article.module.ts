@@ -13,7 +13,7 @@ import {ErrorMessageComponent} from "@/app/shared/components/error-message/error
 
 const routes: Routes = [
   {
-    path: 'articles/new',
+    path: '',
     component: CreateArticleComponent,
   },
 ];

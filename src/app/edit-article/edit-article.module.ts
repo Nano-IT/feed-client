@@ -16,7 +16,7 @@ import {ArticleFormComponent} from '@/app/shared/components/article-form/article
 
 const routes: Routes = [
   {
-    path: 'articles/:slug/edit',
+    path: '',
     component: EditArticleComponent,
   },
 ];

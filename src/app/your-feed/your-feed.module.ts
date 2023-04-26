@@ -9,7 +9,7 @@ import {YourFeedComponent} from '@/app/your-feed/components/your-feed/your-feed.
 
 const routes: Routes = [
   {
-    path: 'feed',
+    path: '',
     component: YourFeedComponent,
   },
 ];

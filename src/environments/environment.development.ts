@@ -1,5 +1,5 @@
 export const environment = {
-  apiUrl: 'http://localhost:3000/api',
+  apiUrl: 'https://api.nanoit.dev/api',
   limit: 10,
   production: false
 };

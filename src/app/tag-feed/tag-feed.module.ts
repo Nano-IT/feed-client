@@ -9,7 +9,7 @@ import {PopularTagsModule} from '@/app/shared/modules/popular-tags/popular-tags.
 
 const routes: Routes = [
   {
-    path: 'tags/:slug',
+    path: ':slug',
     component: TagFeedComponent,
   },
 ];

@@ -14,11 +14,11 @@ import {FollowModule} from "@/app/shared/modules/follow/follow.module";
 
 const routes: Routes = [
   {
-    path: 'profiles/:slug',
+    path: ':slug',
     component: UserProfileComponent,
   },
   {
-    path: 'profiles/:slug/favorites',
+    path: ':slug/favorites',
     component: UserProfileComponent,
   },
 ];

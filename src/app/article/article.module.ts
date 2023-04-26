@@ -20,7 +20,7 @@ import {MarkdownModule} from "@/app/shared/pipes/markdown/markdown.module";
 
 const routes: Routes = [
   {
-    path: 'articles/:slug',
+    path: '',
     component: ArticleComponent,
   },
 ];

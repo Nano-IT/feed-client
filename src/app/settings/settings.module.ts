@@ -10,7 +10,7 @@ import {LoadingComponent} from '@/app/shared/components/loading/loading.componen
 
 const routes: Routes = [
   {
-    path: 'settings',
+    path: '',
     component: SettingsComponent,
   },
 ];
