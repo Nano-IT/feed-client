@@ -2,12 +2,12 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {ArticleCommentInterface} from '@/app/shared/types/articleComment.interface';
 import {select, Store} from '@ngrx/store';
-import {getArticleCommentsAction} from '@/app/shared/modules/article-comments/store/actions/getArticlleComments.action';
+import {getArticleCommentsAction} from '@sharedModules/article-comments/store/actions/getArticlleComments.action';
 import {
   articleCommentsSelector,
   isLoadingSelector,
-} from '@/app/shared/modules/article-comments/store/selectors';
-import {deleteArticleCommentsAction} from '@/app/shared/modules/article-comments/store/actions/deleteArticleComment.action';
+} from '@sharedModules/article-comments/store/selectors';
+import {deleteArticleCommentsAction} from '@sharedModules/article-comments/store/actions/deleteArticleComment.action';
 import {CurrentUserInterface} from '@/app/shared/types/currentUser.interface';
 import {currentUserSelector} from '@/app/auth/store/selectors';
 

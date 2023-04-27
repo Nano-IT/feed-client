@@ -5,8 +5,8 @@ import {
   getPopularTagsAction,
   getPopularTagsFailureAction,
   getPopularTagsSuccessAction,
-} from '@/app/shared/modules/popular-tags/store/actions/popularTags.action';
-import {PopularTagsService} from '@/app/shared/modules/popular-tags/services/popular-tags.service';
+} from '@sharedModules/popular-tags/store/actions/popularTags.action';
+import {PopularTagsService} from '@sharedModules/popular-tags/services/popular-tags.service';
 import {PopularTagType} from '@/app/shared/types/popularTag.type';
 
 @Injectable()

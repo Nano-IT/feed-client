@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
-import {PersistenceService} from '@/app/shared/services/persistence.service';
+import {PersistenceService} from 'angular-modules';
 import {logoutAction} from '@/app/auth/store/actions/sync.action';
 import {tap} from 'rxjs';
 import {Router} from '@angular/router';

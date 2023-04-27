@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
-import {ArticleCommentsService} from '@/app/shared/modules/article-comments/services/article-comments.service';
+import {ArticleCommentsService} from '@sharedModules/article-comments/services/article-comments.service';
 import {
   getArticleCommentsAction,
   getArticleCommentsFailureAction,
   getArticleCommentsSuccessAction,
-} from '@/app/shared/modules/article-comments/store/actions/getArticlleComments.action';
+} from '@sharedModules/article-comments/store/actions/getArticlleComments.action';
 import {catchError, map, of, switchMap} from 'rxjs';
 
 @Injectable()

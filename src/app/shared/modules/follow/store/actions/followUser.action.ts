@@ -1,5 +1,5 @@
 import {createAction, props} from '@ngrx/store';
-import {ActionTypes} from '@/app/shared/modules/follow/store/actionTypes';
+import {ActionTypes} from '@sharedModules/follow/store/actionTypes';
 import {ProfileInterface} from '@/app/shared/types/profile.interface';
 
 export const followUserAction = createAction(

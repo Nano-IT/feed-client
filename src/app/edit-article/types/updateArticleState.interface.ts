@@ -1,4 +1,4 @@
-import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
+import {BackendErrorsInterface} from 'angular-modules';
 import {ArticleInterface} from '@/app/shared/types/article.interface';
 
 export interface UpdateArticleStateInterface {

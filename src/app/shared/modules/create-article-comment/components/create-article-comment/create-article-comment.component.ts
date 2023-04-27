@@ -1,13 +1,13 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {Observable} from 'rxjs';
-import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
+import {BackendErrorsInterface} from 'angular-modules';
 import {select, Store} from '@ngrx/store';
 import {
   errorSelector,
   isLoadingSelector,
-} from '@/app/shared/modules/create-article-comment/store/selectors';
-import {createArticleCommentAction} from '@/app/shared/modules/create-article-comment/store/actions/createArticleComment.action';
+} from '@sharedModules/create-article-comment/store/selectors';
+import {createArticleCommentAction} from '@sharedModules/create-article-comment/store/actions/createArticleComment.action';
 
 @Component({
   selector: 'ac-article-create-comment',

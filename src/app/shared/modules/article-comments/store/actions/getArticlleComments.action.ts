@@ -1,5 +1,5 @@
 import {createAction, props} from '@ngrx/store';
-import {ActionTypes} from '@/app/shared/modules/article-comments/store/actionTypes';
+import {ActionTypes} from '@sharedModules/article-comments/store/actionTypes';
 import {ArticleCommentInterface} from '@/app/shared/types/articleComment.interface';
 
 export const getArticleCommentsAction = createAction(

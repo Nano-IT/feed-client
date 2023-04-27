@@ -1,10 +1,10 @@
 import {Action, createReducer, on} from '@ngrx/store';
-import {PopularTagsStateInterface} from '@/app/shared/modules/popular-tags/types/popularTagsState.interface';
+import {PopularTagsStateInterface} from '@sharedModules/popular-tags/types/popularTagsState.interface';
 import {
   getPopularTagsAction,
   getPopularTagsFailureAction,
   getPopularTagsSuccessAction,
-} from '@/app/shared/modules/popular-tags/store/actions/popularTags.action';
+} from '@sharedModules/popular-tags/store/actions/popularTags.action';
 
 const initialState: PopularTagsStateInterface = {
   data: null,

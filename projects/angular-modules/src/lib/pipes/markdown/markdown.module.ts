@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MarkdownPipe} from '@/app/shared/pipes/markdown/markdown.pipe';
+import {MarkdownPipe} from './markdown.pipe';
 
 @NgModule({
   declarations: [MarkdownPipe],

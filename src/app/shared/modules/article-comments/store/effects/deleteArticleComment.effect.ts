@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
-import {ArticleCommentsService} from '@/app/shared/modules/article-comments/services/article-comments.service';
+import {ArticleCommentsService} from '@sharedModules/article-comments/services/article-comments.service';
 import {catchError, map, of, switchMap} from 'rxjs';
 import {
   deleteArticleCommentsAction,
   deleteArticleCommentsFailureAction,
   deleteArticleCommentsSuccessAction,
-} from '@/app/shared/modules/article-comments/store/actions/deleteArticleComment.action';
+} from '@sharedModules/article-comments/store/actions/deleteArticleComment.action';
 
 @Injectable()
 export class DeleteArticleCommentEffect {

@@ -10,13 +10,13 @@ import {reducers} from './store/reducers';
 import {AuthService} from './services/auth.service';
 import {EffectsModule} from '@ngrx/effects';
 import {RegisterEffect} from './store/effects/register.effect';
-import {PersistenceService} from '../shared/services/persistence.service';
+import {PersistenceService} from 'angular-modules';
 import {LoginEffect} from './store/effects/login.effect';
 import {GetCurrentUserEffect} from './store/effects/getCurrentUser.effect';
-import {BackendErrorMessagesComponent} from '@/app/shared/components/backend-error-messages/backend-error-messages.component';
+import {BackendErrorMessagesComponent} from 'angular-modules';
 import {UpdateCurrentUserEffect} from '@/app/auth/store/effects/updateCurrentUser.effect';
 import {LogoutEffect} from '@/app/auth/store/effects/logout.effect';
-import {ErrorMessageComponent} from '@/app/shared/components/error-message/error-message.component';
+import {ErrorMessageComponent} from 'angular-modules';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AuthInterceptor} from '@/app/shared/services/auth.interceptor';
 

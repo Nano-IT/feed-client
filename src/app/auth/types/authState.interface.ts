@@ -1,5 +1,5 @@
 import {CurrentUserInterface} from '@/app/shared/types/currentUser.interface';
-import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
+import {BackendErrorsInterface} from 'angular-modules';
 
 export interface AuthStateInterface {
   isSubmitting: boolean;

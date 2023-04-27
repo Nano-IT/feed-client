@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {Observable} from 'rxjs';
-import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
+import {BackendErrorsInterface} from 'angular-modules';
 import {select, Store} from '@ngrx/store';
 import {
   errorMessageSelector,

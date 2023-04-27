@@ -1,5 +1,5 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
-import {ArticleCommentsStateInterface} from '@/app/shared/modules/article-comments/types/articleCommentsState.interface';
+import {ArticleCommentsStateInterface} from '@sharedModules/article-comments/types/articleCommentsState.interface';
 
 export const articleCommentFeatureSelector =
   createFeatureSelector<ArticleCommentsStateInterface>('articleComments');

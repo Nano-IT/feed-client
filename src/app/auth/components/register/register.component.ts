@@ -9,7 +9,7 @@ import {
   validationErrorsSelector,
 } from '../../store/selectors';
 import {RegisterRequestInterface} from '../../types/registerRequest.interface';
-import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
+import {BackendErrorsInterface} from 'angular-modules';
 
 @Component({
   selector: 'ac-register',

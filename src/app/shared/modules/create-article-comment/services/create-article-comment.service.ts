@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {ArticleCommentInterface} from '@/app/shared/types/articleComment.interface';
 import {environment} from '@/environments/environment.development';
-import {CreateArticleCommentInputInterface} from '@/app/shared/modules/create-article-comment/types/createArticleCommentInput.interface';
+import {CreateArticleCommentInputInterface} from '@sharedModules/create-article-comment/types/createArticleCommentInput.interface';
 
 @Injectable({
   providedIn: 'root',

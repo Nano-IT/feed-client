@@ -1,7 +1,7 @@
 import {createAction, props} from '@ngrx/store';
-import {ActionTypes} from '@/app/shared/modules/create-article-comment/store/actionTypes';
+import {ActionTypes} from '@sharedModules/create-article-comment/store/actionTypes';
 import {ArticleCommentInterface} from '@/app/shared/types/articleComment.interface';
-import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
+import {BackendErrorsInterface} from 'angular-modules';
 
 export const createArticleCommentAction = createAction(
   ActionTypes.CREATE_ARTICLE_COMMENT,

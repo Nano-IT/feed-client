@@ -6,9 +6,9 @@ import {ArticleService as SharedArticleService} from '@/app/shared/services/arti
 import {EffectsModule} from '@ngrx/effects';
 import {UpdateArticleEffect} from '@/app/edit-article/store/effects/updateArticle.effect';
 import {GetArticleEffect} from '@/app/edit-article/store/effects/getArticle.effect';
-import {LoadingComponent} from '@/app/shared/components/loading/loading.component';
-import {BackendErrorMessagesComponent} from '@/app/shared/components/backend-error-messages/backend-error-messages.component';
-import {ErrorMessageComponent} from '@/app/shared/components/error-message/error-message.component';
+import {LoadingComponent} from 'angular-modules';
+import {BackendErrorMessagesComponent} from 'angular-modules';
+import {ErrorMessageComponent} from 'angular-modules';
 import {RouterModule, Routes} from '@angular/router';
 import {StoreModule} from '@ngrx/store';
 import {reducers} from '@/app/edit-article/store/reducers';

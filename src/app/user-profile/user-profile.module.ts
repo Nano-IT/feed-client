@@ -7,10 +7,10 @@ import {EffectsModule} from '@ngrx/effects';
 import {GetUserProfileEffect} from '@/app/user-profile/store/effects/getUserProfile.effect';
 import {StoreModule} from '@ngrx/store';
 import {reducers} from '@/app/user-profile/store/reducers';
-import {FeedModule} from "@/app/shared/modules/feed/feed.module";
+import {FeedModule} from "@sharedModules/feed/feed.module";
 import {FeedTogglerComponent} from "@/app/shared/components/feed-toggler/feed-toggler.component";
-import {LoadingComponent} from "@/app/shared/components/loading/loading.component";
-import {FollowModule} from "@/app/shared/modules/follow/follow.module";
+import {LoadingComponent} from "angular-modules";
+import {FollowModule} from "@sharedModules/follow/follow.module";
 
 const routes: Routes = [
   {

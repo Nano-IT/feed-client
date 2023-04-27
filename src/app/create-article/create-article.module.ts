@@ -9,7 +9,7 @@ import {CreateArticleEffect} from '@/app/create-article/store/effects/createArti
 import {StoreModule} from '@ngrx/store';
 import {reducers} from '@/app/create-article/store/reducers';
 import {ArticleFormComponent} from '@/app/shared/components/article-form/article-form.component';
-import {ErrorMessageComponent} from "@/app/shared/components/error-message/error-message.component";
+import {ErrorMessageComponent} from "angular-modules";
 
 const routes: Routes = [
   {

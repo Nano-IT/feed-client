@@ -1,5 +1,5 @@
 import {createAction, props} from '@ngrx/store';
-import {ActionTypes} from '@/app/shared/modules/article-comments/store/actionTypes';
+import {ActionTypes} from '@sharedModules/article-comments/store/actionTypes';
 
 export const deleteArticleCommentsAction = createAction(
   ActionTypes.DELETE_ARTICLE_COMMENT,

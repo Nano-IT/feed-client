@@ -1,4 +1,4 @@
-import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
+import {BackendErrorsInterface} from 'angular-modules';
 
 export interface CreateArticleCommentStateInterface {
   validationErrors: BackendErrorsInterface | null;

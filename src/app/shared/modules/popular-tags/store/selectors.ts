@@ -1,5 +1,5 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
-import {PopularTagsStateInterface} from '@/app/shared/modules/popular-tags/types/popularTagsState.interface';
+import {PopularTagsStateInterface} from '@sharedModules/popular-tags/types/popularTagsState.interface';
 
 export const popularTagsFeatureSelector =
   createFeatureSelector<PopularTagsStateInterface>('popularTags');

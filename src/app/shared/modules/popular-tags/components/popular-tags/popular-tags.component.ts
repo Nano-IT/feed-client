@@ -2,12 +2,12 @@ import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {PopularTagType} from '@/app/shared/types/popularTag.type';
 import {select, Store} from '@ngrx/store';
-import {getPopularTagsAction} from '@/app/shared/modules/popular-tags/store/actions/popularTags.action';
+import {getPopularTagsAction} from '@sharedModules/popular-tags/store/actions/popularTags.action';
 import {
   errorSelector,
   isLoadingSelector,
   popularTagsSelector,
-} from '@/app/shared/modules/popular-tags/store/selectors';
+} from '@sharedModules/popular-tags/store/selectors';
 
 @Component({
   selector: 'ac-popular-tags',

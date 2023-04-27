@@ -4,9 +4,9 @@ import {SettingsComponent} from './components/settings/settings.component';
 import {RouterModule, Routes} from '@angular/router';
 import {StoreModule} from '@ngrx/store';
 import {reducers} from '@/app/settings/store/reducers';
-import {BackendErrorMessagesComponent} from '@/app/shared/components/backend-error-messages/backend-error-messages.component';
+import {BackendErrorMessagesComponent} from 'angular-modules';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {LoadingComponent} from '@/app/shared/components/loading/loading.component';
+import {LoadingComponent} from 'angular-modules';
 
 const routes: Routes = [
   {

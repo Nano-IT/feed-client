@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {followUserAction} from "@/app/shared/modules/follow/store/actions/followUser.action";
+import {followUserAction} from "@sharedModules/follow/store/actions/followUser.action";
 
 @Component({
   selector: 'ac-follow',

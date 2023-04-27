@@ -11,7 +11,7 @@ import {EffectsModule} from '@ngrx/effects';
 import {GlobalFeedModule} from './global-feed/global-feed.module';
 import {routerReducer, StoreRouterConnectingModule} from '@ngrx/router-store';
 import {TopBarComponent} from './shared/components/top-bar/top-bar.component';
-import {AppInitializerModule} from '@/app/shared/modules/app-initializer/app-initializer.module';
+import {AppInitializerModule} from '@sharedModules/app-initializer/app-initializer.module';
 
 @NgModule({
   declarations: [AppComponent],

@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {select, Store} from '@ngrx/store';
 import {updateCurrentUserAction} from '@/app/auth/store/actions/updateCurrentUser.action';
-import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
+import {BackendErrorsInterface} from 'angular-modules';
 import {filter, Observable, Subscription} from 'rxjs';
 import {
   isSubmittingSelector,

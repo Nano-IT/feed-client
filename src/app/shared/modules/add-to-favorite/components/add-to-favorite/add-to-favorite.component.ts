@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
-import {addToFavoriteAction} from '@/app/shared/modules/add-to-favorite/store/actions/addToFavorite.action';
+import {addToFavoriteAction} from '@sharedModules/add-to-favorite/store/actions/addToFavorite.action';
 import {currentUserSelector} from '@/app/auth/store/selectors';
 import {Observable} from 'rxjs';
 import {CurrentUserInterface} from '@/app/shared/types/currentUser.interface';

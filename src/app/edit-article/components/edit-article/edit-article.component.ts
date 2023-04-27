@@ -9,7 +9,7 @@ import {
   validationErrorsSelector,
 } from '@/app/edit-article/store/selectors';
 import {ActivatedRoute} from '@angular/router';
-import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
+import {BackendErrorsInterface} from 'angular-modules';
 import {ArticleInputInterface} from '@/app/shared/types/articleInput.interface';
 import {updateArticleAction} from '@/app/edit-article/store/actions/updateArticle.action';
 import {getArticleAction} from '@/app/edit-article/store/actions/getArticle.action';

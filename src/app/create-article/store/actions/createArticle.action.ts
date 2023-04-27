@@ -2,7 +2,7 @@ import {createAction, props} from '@ngrx/store';
 import {ActionTypes} from '@/app/create-article/store/actionTypes';
 import {ArticleInputInterface} from '@/app/shared/types/articleInput.interface';
 import {ArticleInterface} from '@/app/shared/types/article.interface';
-import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
+import {BackendErrorsInterface} from 'angular-modules';
 
 export const createArticleAction = createAction(
   ActionTypes.CREATE_ARTICLE,

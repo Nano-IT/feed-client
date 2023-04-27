@@ -7,16 +7,16 @@ import {reducers} from '@/app/article/store/reducers';
 import {EffectsModule} from '@ngrx/effects';
 import {GetArticleEffect} from '@/app/article/store/effects/getArticle.effect';
 import {RouterModule, Routes} from '@angular/router';
-import {LoadingComponent} from '@/app/shared/components/loading/loading.component';
-import {ErrorMessageComponent} from '@/app/shared/components/error-message/error-message.component';
+import {LoadingComponent} from 'angular-modules';
+import {ErrorMessageComponent} from 'angular-modules';
 import {TagListComponent} from '@/app/shared/components/tag-list/tag-list.component';
 import {ArticleService} from '@/app/article/services/article.service';
 import {DeleteArticleEffect} from '@/app/article/store/effects/deleteArticle.effect';
-import {FollowModule} from "@/app/shared/modules/follow/follow.module";
-import {AddToFavoriteModule} from "@/app/shared/modules/add-to-favorite/add-to-favorite.module";
-import {CreateArticleCommentModule} from "@/app/shared/modules/create-article-comment/create-article-comment.module";
-import {ArticleCommentsModule} from "@/app/shared/modules/article-comments/article-comments.module";
-import {MarkdownModule} from "@/app/shared/pipes/markdown/markdown.module";
+import {FollowModule} from "@sharedModules/follow/follow.module";
+import {AddToFavoriteModule} from "@sharedModules/add-to-favorite/add-to-favorite.module";
+import {CreateArticleCommentModule} from "@sharedModules/create-article-comment/create-article-comment.module";
+import {ArticleCommentsModule} from "@sharedModules/article-comments/article-comments.module";
+import {MarkdownModule} from "angular-modules";
 
 const routes: Routes = [
   {

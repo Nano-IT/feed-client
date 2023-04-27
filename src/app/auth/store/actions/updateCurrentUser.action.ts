@@ -2,7 +2,7 @@ import {createAction, props} from '@ngrx/store';
 
 import {ActionTypes} from '../actionTypes';
 import {CurrentUserInterface} from 'src/app/shared/types/currentUser.interface';
-import {BackendErrorsInterface} from '@/app/shared/types/backendErrors.interface';
+import {BackendErrorsInterface} from 'angular-modules';
 import {CurrentUserInputInterface} from '@/app/shared/types/currentUserInput.interface';
 
 export const updateCurrentUserAction = createAction(

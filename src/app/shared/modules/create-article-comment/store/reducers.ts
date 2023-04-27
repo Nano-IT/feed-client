@@ -1,10 +1,10 @@
-import {CreateArticleCommentStateInterface} from '@/app/shared/modules/create-article-comment/types/createArticleCommentState.interface';
+import {CreateArticleCommentStateInterface} from '@sharedModules/create-article-comment/types/createArticleCommentState.interface';
 import {Action, createReducer, on} from '@ngrx/store';
 import {
   createArticleCommentAction,
   createArticleCommentFailureAction,
   createArticleCommentSuccessAction,
-} from '@/app/shared/modules/create-article-comment/store/actions/createArticleComment.action';
+} from '@sharedModules/create-article-comment/store/actions/createArticleComment.action';
 
 const initialState: CreateArticleCommentStateInterface = {
   validationErrors: null,

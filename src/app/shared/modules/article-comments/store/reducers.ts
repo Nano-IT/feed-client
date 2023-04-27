@@ -1,12 +1,12 @@
-import {ArticleCommentsStateInterface} from '@/app/shared/modules/article-comments/types/articleCommentsState.interface';
+import {ArticleCommentsStateInterface} from '@sharedModules/article-comments/types/articleCommentsState.interface';
 import {Action, createReducer, on} from '@ngrx/store';
 import {
   getArticleCommentsAction,
   getArticleCommentsFailureAction,
   getArticleCommentsSuccessAction,
-} from '@/app/shared/modules/article-comments/store/actions/getArticlleComments.action';
-import {createArticleCommentSuccessAction} from '@/app/shared/modules/create-article-comment/store/actions/createArticleComment.action';
-import {deleteArticleCommentsSuccessAction} from '@/app/shared/modules/article-comments/store/actions/deleteArticleComment.action';
+} from '@sharedModules/article-comments/store/actions/getArticlleComments.action';
+import {createArticleCommentSuccessAction} from '@sharedModules/create-article-comment/store/actions/createArticleComment.action';
+import {deleteArticleCommentsSuccessAction} from '@sharedModules/article-comments/store/actions/deleteArticleComment.action';
 
 const initialState: ArticleCommentsStateInterface = {
   isLoading: false,
